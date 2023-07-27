@@ -1,0 +1,51 @@
+@import "../../../../../../assets/styles/media.less";
+@import "../../../../../../assets/styles/colors.less";
+
+.Footer {
+    flex-shrink: 0;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid var(--primary_border_color);
+    display: flex;
+    padding: 20px 40px;
+
+    & > button {
+        margin: 0;
+
+        &:first-child {
+            border: 1px solid var(--primary_border_color);
+            color: var(--primary_text_color);
+            background-color: var(--primary_background_color);
+        }
+    }
+}
+
+@media (max-height: @max-width__tablet) {
+    .Footer {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: @max-width__650) {
+    .Footer {
+        & > button {
+            width: 120px;
+        }
+    }
+}
+
+@media (max-width: @max-width__mobile), (max-height: @max-width__400) {
+    .Footer {
+        padding: 20px 20px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .Footer {
+        & > button {
+            &:first-child:hover {
+                box-shadow: 0 2px 9px var(--primary_border_color);
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+node_modules
+public/static/build
+.DS_Store
+public/static/config.js
+build
+coverage
+.vscode

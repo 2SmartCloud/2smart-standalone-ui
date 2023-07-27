@@ -1,0 +1,76 @@
+@import "../../assets/styles/colors.less";
+@import "../../assets/styles/media.less";
+
+.SortButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    min-width: 56px;
+    height: 100%;
+    min-height: 38px;
+    border-radius: 4px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    line-height: 20px;
+    border: 1px solid var(--primary_background_color);
+    color: var(--color_icon);
+    background-color: var(--primary_background_color);
+    user-select: none;
+    cursor: pointer;
+
+    @media @hover__not-touch {
+        &:hover {
+            border-color: var(--border_color_search);
+            color: var(--color_icon--hover);
+        }
+    }
+
+    &.date {
+        width: 110px;
+        min-width: 110px;
+        font-size: 14px;
+        padding: 0 10px;
+
+        * {
+            letter-spacing: 0;
+        }
+
+        .mobileLabel {
+            display: none;
+        }
+
+        @media (max-width: 850px) {
+            width: 60px;
+            min-width: 60px;
+
+            .mobileLabel {
+                display: flex;
+            }
+
+            .notMobileLabel {
+                display: none;
+            }
+        }
+
+        svg {
+            transform: rotate(-90deg);
+            margin-right: -7px;
+        }
+
+        &.isStraightOrder {
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &.active {
+        color: @color__aqua !important;
+
+        path {
+            fill: @color__aqua !important;
+        }
+    }
+}

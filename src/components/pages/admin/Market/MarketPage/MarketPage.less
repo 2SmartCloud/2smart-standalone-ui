@@ -1,0 +1,36 @@
+@import "../../../../../assets/styles/media.less";
+
+.MarketPage {
+    max-width: 1190px;
+    width: 100%;
+    height: 100%;
+
+    .contentWrapper {
+        width: 100%;
+        height: calc(100% - 64px);
+        flex-grow: 1;
+        overflow-y: auto;
+    }
+
+    .tabsWrapper {
+        max-width: 100%;
+
+        @media (max-width: @max-width__mobile) {
+            justify-content: space-between;
+        }
+    }
+}
+
+@media (max-width: @max-width__mobile) {
+    .MarketPage {
+        .contentWrapper {
+            height: calc(100% - 110px);
+        }
+    }
+}
+
+.tabsRoot {
+    background: none !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+}

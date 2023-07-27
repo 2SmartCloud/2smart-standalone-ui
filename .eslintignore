@@ -1,0 +1,8 @@
+public/static/*.js
+webpack.config.js
+styleguide.config.js
+webpack-production.config.js
+server.js
+serve.js
+src/__mocks__/*
+*.spec.js

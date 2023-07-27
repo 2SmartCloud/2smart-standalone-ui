@@ -1,0 +1,108 @@
+@import '../../../../../assets/styles/colors.less';
+@import '../../../../../assets/styles//media.less';
+@import '../../../../../assets/styles//mixins.less';
+
+@height__input: 36px;
+@height__label: 28px;
+@height__error-message: 22px;
+@color__dark-green: #4B7A78;
+@color__green: #04BAAC;
+
+.PeriodicallyConfig {
+    width: 100%;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 420px;
+        margin-bottom: 10px;
+
+        .fieldLabel {
+            display: flex;
+            align-items: center;
+            color: var(--primary_text_color);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: @height__label;
+            user-select: none;
+
+            .infoButton {
+                /* stylelint-disable declaration-colon-space-after, property-no-unknown */
+                &:extend(.info_button);
+
+                @media @hover__not-touch {
+                    &:hover {
+                        &:extend(.info_button__hover);
+                    }
+                }
+            }
+        }
+
+        .formInfo {
+            display: grid;
+            align-items: center;
+            grid-auto-flow: column;
+            grid-gap: 10px;
+
+            @media (max-width: @max-width__mobile) {
+                grid-gap: 5px;
+            }
+        }
+
+        .addFieldButton {
+            width: 21px;
+            height: 21px;
+            background: @color__green;
+            color: #FFF;
+            text-align: center;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 17px;
+            border-radius: 50%;
+            cursor: pointer;
+            user-select: none;
+            transition: box-shadow 0.3s ease;
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+    }
+
+    .formFieldWrapper {
+        width: 100%;
+        max-width: 420px;
+
+        @field-gap: 10px;
+        @field-width: calc((100%  - 25px - 20px - 34px - 5px) / 2);
+
+        .fieldWrapper {
+            display: grid;
+            grid-template-columns: @field-width @field-width 34px 20px;
+            grid-gap: @field-gap;
+            align-items: center;
+            padding-bottom: 10px;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .PeriodicallyConfig {
+        .header {
+            .addFieldButton {
+                &:hover {
+                    box-shadow: 0 2px 9px @color__dark-green;
+                }
+            }
+        }
+    }
+}

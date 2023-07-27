@@ -1,0 +1,121 @@
+@import "../../../../../../assets/styles/media.less";
+@import "../../../../../../assets/styles/colors.less";
+
+.CustomDatePickerItem {
+    width: 30px;
+    height: 30px;
+    justify-self: center;
+    transition: background ease-in-out 0.2s, box-shadow 0.2s linear;
+
+    &.selectedStart {
+        position: relative;
+        width: 40px;
+        z-index: 1;
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(4, 186, 172, 0.5);
+            transition: all ease-in-out 0.2s;
+            z-index: -1;
+        }
+    }
+
+    &.selectedEnd {
+        position: relative;
+        width: 40px;
+        z-index: 1;
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(4, 186, 172, 0.5);
+            transition: width ease-in-out 0.2s;
+            z-index: -1;
+        }
+    }
+
+    &.inRange {
+        width: 40px;
+        background: rgba(4, 186, 172, 0.5);
+        transition: all ease-in-out 0.2s;
+    }
+
+    &.notActive {
+        width: 40px;
+    }
+
+    .date {
+        border-radius: 50%;
+        border: solid 2px @color__aqua;
+        line-height: 28px;
+        text-align: center;
+        align-self: center;
+        font-size: 14px;
+        color: var(--primary_text_color);
+        cursor: pointer;
+
+        &.notActive {
+            width: 30px;
+            height: 100%;
+            margin: 0 auto;
+            border: solid 2px @color__aqua;
+        }
+
+        &.active {
+            width: 30px;
+            height: 100%;
+            margin: 0 auto;
+            background: @color__aqua;
+            color: #FFF;
+        }
+
+        &.inRange {
+            position: relative;
+            height: 100%;
+            border: none;
+            line-height: 30px;
+            border-radius: 0;
+            color: #FFF;
+            transition: all ease-in-out 0.2s;
+            z-index: 1;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .CustomDatePickerItem {
+        &.selectedStart,
+        &.selectedEnd,
+        &.inRange,
+        &.notActive {
+            width: 37px;
+        }
+
+        .date {
+            width: 37px;
+        }
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .CustomDatePickerItem {
+        .date {
+            &.notActive {
+                &:hover {
+                    box-shadow: 0 2px 7px @color__aqua;
+                    color: var(--primary_text_color);
+                    transition: all ease-in-out 0.2s, box-shadow 0.2s linear;
+                }
+            }
+        }
+    }
+}

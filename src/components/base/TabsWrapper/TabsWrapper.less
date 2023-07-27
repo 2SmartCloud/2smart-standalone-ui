@@ -1,0 +1,39 @@
+
+@import "../../../assets/styles/colors.less";
+@import "../../../assets/styles/media.less";
+
+.tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    padding: 25px;
+    background: var(--primary_background_color) !important;
+
+    @media (max-width: @max-width__mobile) {
+        padding: 12px 0;
+    }
+
+    @media @mobile__landscape {
+        padding: 8px 20px;
+    }
+
+    &:hover {
+        color: var(--primary_text_color) !important;
+    }
+}
+
+.indicator {
+    background: @color__aqua-dark !important;
+    width: 3px;
+    height: 2px;
+    border-radius: 1.5px 0 0 1.5px;
+}
+
+.scrollButtons {
+    color: var(--color_icon) !important;
+
+    &:hover {
+        color: var(--color_icon--hover) !important;
+    }
+}

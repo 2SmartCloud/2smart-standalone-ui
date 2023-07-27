@@ -1,0 +1,44 @@
+@import '../../../assets/styles/colors.less';
+@import '../../../assets/styles/media.less';
+@import '../../../assets/styles/mixins.less';
+
+.Checkbox {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    color: var(--tabs-text-color);
+    cursor: pointer;
+    padding-right: 5px;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            color: var(--primary_text_color);
+
+            .primaryColor {
+                color: @color__aqua !important;
+            }
+        }
+    }
+}
+
+.primaryColor {
+    color: var(--border_color_select) !important;
+    background-color: transparent !important;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            color: @color__aqua !important;
+        }
+    }
+}
+
+.checked {
+    color: @color__aqua !important;
+}
+
+.root {
+    padding: 0 !important;
+    padding-right: 5px !important;
+}

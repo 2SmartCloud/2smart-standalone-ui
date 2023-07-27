@@ -1,0 +1,108 @@
+@import '../../assets/styles/colors.less';
+@import '../../assets/styles/media.less';
+@color__button-negative:rgba(222, 5, 5, 0.59);
+
+.Button {
+    display: block;
+    outline: none;
+    padding: 14px 0;
+    color: @color__white;
+    background: @color__base-blue-btn;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: width 0.3s ease-in-out, box-shadow 0.3s linear;
+    font-size: 14px;
+    width: 200px;
+    margin: 0 auto;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+
+    @media @hover__not-touch {
+        &:hover {
+            box-shadow: 0 2px 9px @color__base-blue-btn;
+        }
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
+    }
+
+    &:disabled {
+        cursor: default;
+        transition: box-shadow 0s;
+        background: @color__btn-disabled !important;
+        box-shadow: none !important;
+    }
+
+    &:visited {
+        box-shadow: none !important;
+    }
+
+    &.action {
+        background: #04BAAC;
+
+        @media @hover__not-touch {
+            &:hover {
+                box-shadow: 0 2px 9px #04BAAC;
+            }
+        }
+
+        &:focus {
+            box-shadow: 0 2px 9px #04BAAC;
+        }
+    }
+
+    &.white {
+        background: @color__white;
+        color: @color__black;
+        border: 1px solid #BEBEBE;
+
+        @media @hover__not-touch {
+            &:hover {
+                box-shadow: 0 0 2px 1px var(--box_shadow_color_select);
+                box-shadow: 0 2px 9px var(--box_shadow_color_select);
+            }
+        }
+
+        &:focus {
+            box-shadow: 0 0 2px 1px var(--box_shadow_color_select);
+            box-shadow: 0 2px 9px var(--box_shadow_color_select);
+        }
+    }
+}
+
+.Button.negative {
+    background: @color__button-negative;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            box-shadow: 0 2px 9px @color__button-negative;
+        }
+    }
+
+    &:focus {
+        box-shadow: 0 2px 9px @color__button-negative;
+    }
+}
+
+.Button.DARK {
+    &.white {
+        background: var(--primary_background_color);
+        color: var(--primary_text_color);
+        border: 1px solid var(--primary_border_color);
+
+        @media @hover__not-touch {
+            &:hover {
+                box-shadow: 0 2px 9px var(--primary_border_color);
+                box-shadow: 0 2px 9px var(--box_shadow_color_select);
+            }
+        }
+
+        &:focus {
+            box-shadow: 0 2px 9px var(--primary_border_color);
+            box-shadow: 0 2px 9px var(--box_shadow_color_select);
+        }
+    }
+}

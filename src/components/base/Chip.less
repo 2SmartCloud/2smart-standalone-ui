@@ -1,0 +1,116 @@
+@import '../../assets/styles/colors.less';
+@import '../../assets/styles/media.less';
+@import '../../assets/styles/mixins.less';
+
+.Chip {
+    display: inline-flex;
+    background-color: var(--group_background_color) !important;
+    border: 1px solid var(--group_border_color) !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    height: 25px !important;
+    margin: 3px !important;
+    max-width: 180px;
+    opacity: 0.99;
+    cursor: default;
+    outline: none;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    justify-content: space-between;
+    text-decoration: none;
+
+    &.hoverable {
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+
+    &.sizeS {
+        height: 19px !important;
+        font-size: 10px !important;
+        line-height: 15px;
+        max-width: 120px;
+
+        .label {   /* stylelint-disable-line */
+            padding-left: 4px;
+            padding-right: 4px;
+            user-select: none;
+        }
+    }
+
+    &.secondary {
+        border: none !important;
+        background-color: var(--group_secondary_background_color) !important;
+    }
+
+    &.disabled {
+        pointer-events: none !important;
+        background-color: #ABABAB !important;
+
+        .label {
+            color: #000 !important;
+            user-select: none;
+        }
+    }
+
+    .icon {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        cursor: pointer;
+        color: var(--color_icon);
+
+        &:hover {
+            color: var(--color_icon);
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                color: var(--color_icon--hover);
+            }
+        }
+    }
+
+    &.deleted {
+        background-color: var(--input_disabled_background) !important;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--node_background_color--hover);
+
+            &.deleted {
+                background-color: var(--input_disabled_background) !important;
+            }
+        }
+    }
+}
+
+.tooltip {
+    max-width: 200px;
+    word-break: break-all;
+}
+
+.spinner {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: @color__aqua !important;
+}
+
+.label {  /* stylelint-disable-line */
+    display: block !important;
+    color: var(--primary_text_color) !important;
+    align-items: center;
+    white-space: nowrap;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    user-select: none;
+}

@@ -1,0 +1,53 @@
+@import "../../../../assets/styles/media.less";
+@import "../../../../assets/styles/scales.less";
+
+@height__header: 44px;
+@margin-bottom__header: 20px;
+
+.SystemLogsPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .tableWrapper {
+        height: calc(100% - @height__header - @margin-bottom__header);
+    }
+}
+
+@media (max-width: @max-width__870) {
+    @height__header--tablet: @height__header * 2 + 20px;
+
+    .SystemLogsPage {
+        .tableWrapper {
+            height: calc(100% - @height__header--tablet - @margin-bottom__header);
+        }
+    }
+}
+
+@media (max-width: @max-width__650) {
+    @height__header--mobile: @height__header * 2 + 10px;
+    @margin-bottom__header: 10px;
+
+    .SystemLogsPage {
+        .tableWrapper {
+            height: calc(100% - @height__header--mobile - @margin-bottom__header);
+        }
+    }
+}
+
+@media (max-width: @max-width__mobile) {
+    .SystemLogsPage {
+        .tableWrapper {
+            height: calc(100% - 110px);
+            margin-bottom: 10px;
+        }
+    }
+}

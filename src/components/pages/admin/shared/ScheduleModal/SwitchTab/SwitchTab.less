@@ -1,0 +1,39 @@
+@import "../../../../../../assets/styles/colors.less";
+@import "../../../../../../assets/styles/media.less";
+@import "../../../../../../assets/styles/scales.less";
+
+@height__button: 44px;
+@height__input: @height__button;
+
+.Button {
+    width: 72px;
+    height: @height__button;
+    margin: 0;
+    border: solid 1px @color__aqua;
+    color: @color__aqua;
+    background-color: var(--primary_background_color);
+    font-size: 12px;
+
+    &.nonActiveVertical {
+        border: solid 1px @color__aqua;
+    }
+
+    &.vertical {
+        height: 22px;
+        padding: 0;
+    }
+
+    &.active {
+        background: @color__aqua;
+        border: none;
+        color: white;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .Button {
+        &:hover {
+            box-shadow: 0 2px 9px @color__aqua;
+        }
+    }
+}

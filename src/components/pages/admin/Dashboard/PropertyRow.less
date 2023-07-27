@@ -1,0 +1,140 @@
+@import './../../../../assets/styles/colors.less';
+@import './../../../../assets/styles/media.less';
+
+@controls-width: 18px;
+@row-gap: 16px;
+@cell-width: calc((100% - @row-gap) / 2);
+
+@row-gap-mobile: 10px;
+@cell-width-mobile: calc((100% - @row-gap-mobile) / 2);
+
+.PropertyRow {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    color: var(--contrast_text_color);
+
+    &:last-child {
+        margin-bottom: 20px;
+    }
+
+    .mainData {
+        display: grid;
+        grid-template-columns: @cell-width @cell-width;
+        grid-gap: @row-gap;
+        align-items: center;
+        justify-content: start;
+        min-height: 45px;
+
+        @media (max-width: @max-width__mobile) {
+            grid-template-columns: @cell-width-mobile @cell-width-mobile;
+            grid-gap: @row-gap-mobile;
+        }
+    }
+
+    .groupsList {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: -6px;
+        margin-bottom: 5px;
+
+        .groupChip,
+        .addButton,
+        .moreButton {
+            margin-right: 6px !important;
+            margin-top: 6px !important;
+            margin-left: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        > * {
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &.copyMode {
+        .mainData {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .controlsIcons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @media (hover: hover) and (pointer: fine) {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .groupsBtn {
+            margin-right: 7px;
+
+            > * {
+                width: 20px;
+                height: 15px;
+            }
+        }
+
+        .actionBtn {
+            display: flex;
+            margin-left: 7px;
+
+            > * {
+                width: 16px;
+                height: 16px;
+                cursor: pointer;
+            }
+        }
+
+        .progressWrapper {
+            margin-left: 7px;
+        }
+
+        &.disabled * {
+            pointer-events: none;
+            opacity: 0;
+        }
+    }
+
+    .cell {
+        display: flex;
+        border: none;
+        font-size: 14px;
+        color: var(--primary_text_color);
+
+        &.value {
+            font-weight: 700;
+        }
+
+        .controlsIcons {
+            pointer-events: all !important;
+            cursor: pointer;
+
+            > * {
+                pointer-events: all !important;
+            }
+        }
+
+        &.name {
+            pointer-events: all !important;
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    .controlsIcons {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .propertyName {
+        width: auto;
+        min-width: 0;
+    }
+}

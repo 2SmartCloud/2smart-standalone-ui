@@ -1,0 +1,104 @@
+@import "../../../../../assets/styles/media.less";
+@import "../../../../../assets/styles/scales.less";
+
+@height__header: 44px;
+
+.LogsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: @height__header;
+    margin-bottom: @margin-pages_base;
+
+    .searchWrapper {
+        height: @height__header;
+        width: 200px;
+
+        input {
+            border-radius: 4px;
+        }
+    }
+
+    .refreshWrapper {
+        cursor: pointer;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &.disabled {
+            opacity: 0.2 !important;
+            cursor: default;
+        }
+    }
+
+    .levelsWrapper {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: @max-width__laptop) {
+    .LogsHeader {
+        .levelsWrapper {
+            position: static;
+            top: initial;
+            left: initial;
+            transform: none;
+        }
+    }
+}
+
+@media (max-width: @max-width__870) {
+    @height__header--tablet: @height__header * 2 + 20px;
+
+    .LogsHeader {
+        flex-wrap: wrap;
+        height: @height__header--tablet;
+
+        .searchWrapper {
+            flex-shrink: 0;
+        }
+
+        .levelsWrapper {
+            order: 1;
+            flex-basis: 100%;
+            margin-top: 20px;
+        }
+    }
+}
+
+@media (max-width: @max-width__650) {
+    @height__header--mobile: @height__header * 2 + 10px;
+
+    .LogsHeader {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        height: auto;
+        width: 100%;
+        margin-bottom: @margin-pages_mobile;
+
+        .searchWrapper {
+            width: calc(100% - 56px - 9px);
+        }
+
+        .levelsWrapper {
+            margin-top: @margin-pages_mobile;
+        }
+    }
+}
+
+@media (max-height: @max-width__400) {
+    .LogsHeader {
+        margin-bottom: @margin-pages_mobile;
+
+        .levelsWrapper {
+            margin-top: @margin-pages_mobile;
+        }
+    }
+}

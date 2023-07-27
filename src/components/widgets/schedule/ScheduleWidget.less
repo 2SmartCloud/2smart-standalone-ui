@@ -1,0 +1,53 @@
+.ScheduleWidget {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0 10px;
+    width: 100%;
+    height: 100%;
+
+    &.blur {
+        filter: blur(1px);
+    }
+
+    &.disabled {
+        pointer-events: none !important;
+        opacity: 0.6;
+    }
+
+    .fieldWrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-gap: 10px;
+
+        & > div {
+            &:nth-child(3) {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                align-self: center;
+                margin-top: -22px;
+            }
+
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    .ProcessingWrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+}

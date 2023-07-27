@@ -1,0 +1,46 @@
+@import '../../../assets/styles/colors.less';
+@import '../../../assets/styles/scales.less';
+@import '../../../assets/styles/media.less';
+
+.ScreenList {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    .title {
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 800;
+        font-size: 14px;
+        color: var(--color_icon);
+        padding: 32px 40px 26px 40px;
+        margin-right: 9px;
+        white-space: nowrap;
+
+        @media (max-width: @max-width__sidebar-mobile-view) {
+            padding-top: 32px;
+            text-align: center;
+        }
+    }
+
+    .listItems {
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin-right: 9px;
+
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: var(--color_scroll_track);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: @color__ligth-spring-green;
+        }
+    }
+}

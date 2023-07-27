@@ -1,0 +1,49 @@
+@import "../../../../../assets/styles/media.less";
+
+.LogLevels {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 44px;
+    font-size: 12px;
+    border: 1px solid var(--log-level_border_color);
+    border-radius: 2px;
+    user-select: none;
+
+    .level {
+        display: flex;
+        align-items: center;
+        color: var(--primary_text_color);
+        padding: 0 24px;
+        height: 44px;
+        cursor: pointer;
+        border-radius: 2px;
+
+        &.active {
+            background-color: var(--primary_background_color);
+            height: 46px;
+            margin: -1px;
+            padding: 0 25px;
+            box-shadow: 0 0 8px var(--log-level_shadow_color);
+        }
+    }
+
+    .levelDot {
+        margin-right: 6px;
+    }
+
+    &.disabled {
+        .level {
+            cursor: default;
+            pointer-events: none;
+        }
+    }
+}
+
+@media (max-width: @max-width__400) {
+    .LogLevels {
+        .level {
+            padding: 0 18px;
+        }
+    }
+}

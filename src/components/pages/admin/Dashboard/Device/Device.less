@@ -1,0 +1,158 @@
+@import '../../../../../assets/styles/colors.less';
+@import '../../../../../assets/styles/scales.less';
+@import '../../../../../assets/styles/media.less';
+
+.Device {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-height: 100%;
+    margin-bottom: auto;
+    box-sizing: border-box;
+    padding: 20px 4px 0 15px;
+    border-radius: 3px;
+    background-color: var(--primary_background_color);
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.0336265);
+    overflow: hidden;
+    user-select: none;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-shrink: 0;
+
+        /* TODO: to variable. the value is the same as the value of node card right padding */
+        padding-right: 11px;
+        margin-bottom: 20px;
+        user-select: none;
+    }
+
+    .name {
+        width: 70%;
+        color: var(--primary_text_color);
+        font-size: 15px;
+        line-height: 15px;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-weight: 700;
+    }
+
+    .networkSignalWrapper {
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+
+    .batteryLevelWrapper {
+        flex-shrink: 0;
+    }
+
+    .statusWrapper {
+        flex-shrink: 0;
+        width: 16px;
+        height: 24px;
+    }
+
+    .openModalButton {
+        padding: 0;
+        color: #E8E8E8;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background-color: transparent;
+                color: @color__control;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &.isDisable {
+        .networkSignalWrapper,
+        .batteryLevelWrapper {
+            opacity: 0.5;
+        }
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        margin: 12px 0;
+
+        .toggleHiddenNodesButton {
+            display: inline-flex;
+            align-items: center;
+            height: 100%;
+            font-size: 12px;
+            text-align: center;
+            color: #CDCDCD;
+            transition: color 0.3s ease;
+
+            .toggleIcon {
+                margin-right: 2px;
+                width: 25px;
+
+                path {
+                    fill: #CDCDCD;
+                    transition: fill 0.3s ease;
+                }
+            }
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    cursor: pointer;
+                    color: #979797;
+
+                    path {
+                        fill: #979797;
+                    }
+                }
+            }
+        }
+    }
+
+    .nodesListWrapper {
+        width: 100%;
+        padding-right: 11px;
+        overflow: auto;
+        margin-bottom: 39px;
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: var(--editable-control_border-color);
+            margin: 14px 0;
+        }
+
+        &.withHiddenNodes {
+            margin-bottom: 0;
+        }
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &.empty {
+            margin-bottom: 0;
+        }
+    }
+
+    &.DARK {
+        .divider {
+            background-color: var(--node_border_color);
+        }
+    }
+
+    @media (max-width: @max-width__mobile), (max-height: @max-width__400) {
+        padding-top: 10px;
+
+        .nodesListWrapper {
+            margin-bottom: 15px;
+        }
+
+        .header {
+            margin-bottom: 10px;
+        }
+    }
+}

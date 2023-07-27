@@ -1,0 +1,13 @@
+@import "../../../../assets/styles/media.less";
+@import '../../../../assets/styles/scales.less';
+
+.SortControls {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+
+    @media (max-width: @max-width__mobile) {
+        width: auto;
+        grid-gap: 10px;
+    }
+}

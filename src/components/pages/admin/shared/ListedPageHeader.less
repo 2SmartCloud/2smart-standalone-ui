@@ -1,0 +1,110 @@
+@import "../../../../assets/styles/media.less";
+@import "../../../../assets/styles/scales.less";
+
+@height__header: 44px;
+@margin-bottom__header: 20px;
+
+.ListedPageHeader {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+    grid-template-columns: max-content;
+    align-items: center;
+    width: 100%;
+    margin-bottom: @margin-bottom__header;
+    padding-right: 10px;
+
+    .searchWrapper {
+        height: 100%;
+        width: 200px;
+
+        input {
+            border-radius: 4px;
+        }
+    }
+
+    .filterButtonsWrapper {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 20px;
+        height: 100%;
+
+        > * {
+            height: @height__header !important;
+        }
+    }
+
+    .searchIcon {
+        background: transparent;
+    }
+
+    .searchInput {
+        font-weight: 300;
+    }
+
+    .createButtonWrapper {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        max-width: 240px;
+        margin-left: auto;
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+        > * {
+            height: @height__header !important;
+        }
+    }
+
+    @media (max-width: @max-width__tablet) {
+        .createButtonWrapper {
+            min-width: 160px;
+
+            > * {
+                min-width: uset;
+            }
+        }
+    }
+
+    @media (max-width: @max-width__mobile) {
+        @height__header_mobile: 44px;
+
+        grid-auto-flow: row;
+        grid-gap: @margin-pages_mobile;
+        grid-template-columns: 100%;
+        width: 100%;
+        margin-top: 0;
+
+        .filterButtonsWrapper {
+            grid-auto-columns: 1fr 56px;
+            grid-gap: @margin-pages_mobile;
+
+            > * {
+                height: @height__header_mobile !important;
+            }
+        }
+
+        .createButtonWrapper {
+            width: 100%;
+            grid-row: -1;
+            grid-column-start: 1;
+            grid-column-end: 2;
+
+            > * {
+                height: @height__header_mobile !important;
+            }
+        }
+
+        .searchWrapper {
+            width: 100%;
+        }
+
+        .title {
+            font-size: 28px;
+        }
+    }
+
+    @media (max-width: @max-width__mobile), (max-height: @max-width__400) {
+        margin-bottom: @margin-pages_mobile;
+    }
+}

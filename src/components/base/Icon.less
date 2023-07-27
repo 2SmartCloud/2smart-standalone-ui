@@ -1,0 +1,241 @@
+@import "../../assets/styles/media.less";
+
+.Icon {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.25s linear;
+
+    &.clickable {
+        cursor: pointer;
+    }
+
+    &.close {
+        width: 20px;
+        height: 20px;
+        background: url('../../assets/icons/close.svg');
+        transition: all 0.25s linear;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: url('../../assets/icons/closeActive.svg');
+            }
+        }
+    }
+
+    &.search-close {
+        width: 20px;
+        height: 20px;
+        background: url('../../assets/icons/search-close.svg') center no-repeat;
+        background-size: 12px;
+        transition: none;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background-image: url('../../assets/icons/search-close_active.svg');
+            }
+        }
+    }
+
+    &.dashboard,
+    &.scenarios,
+    &.settings,
+    &.service-manager,
+    &.market,
+    &.logs,
+    &.notifications,
+    &.backup {
+        width: 20px;
+        height: 20px;
+    }
+
+    &.dashboard {
+        background: url('../../assets/icons/dashboard-page.svg');
+    }
+
+    &.scenarios {
+        background: url('../../assets/icons/scenarios-page.svg');
+    }
+
+    &.settings {
+        background-image: url('../../assets/icons/settings-page.svg');
+    }
+
+    &.service-manager {
+        background-image: url('../../assets/icons/services-page.svg');
+    }
+
+    &.market {
+        background-image: url('../../assets/icons/market-page.svg');
+    }
+
+    &.logs {
+        background-image: url('../../assets/icons/logs-page.svg');
+    }
+
+    &.notifications {
+        background-image: url('../../assets/icons/notification-channels.svg');
+    }
+
+    &.backup {
+        background-image: url('../../assets/icons/backup-page.svg');
+    }
+
+    &.right-arrow,
+    &.left-arrow {
+        display: block;
+        width: 17px;
+        height: 7px;
+        background-image: url('../../assets/icons/arrow.svg');
+
+        @media (max-width: @max-width__mobile) {
+            width: 12px;
+            height: 5px;
+        }
+    }
+
+    &.right-arrow {
+        transform: rotate(180deg);
+    }
+
+    &.search {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/icons/search.svg');
+    }
+
+    &.logo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/icons/logo.svg');
+    }
+
+    &.logo-dashboard {
+        display: block;
+        width: 168px;
+        height: 30px;
+        min-height: 30px;
+        margin: 22px auto;
+        background-image: url('../../assets/icons/logo-dashboard.svg');
+    }
+
+    &.delete-scenario,
+    &.edit-scenario {
+        display: block;
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+    }
+
+    &.delete-scenario {
+        background-image: url('../../assets/icons/delete-scenario.svg');
+
+        &:hover {
+            background-image: url('../../assets/icons/delete-scenario.active.svg');
+        }
+    }
+
+    &.delete {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url('../../assets/icons/delete-scenario.svg');
+
+        &:hover {
+            background-image: url('../../assets/icons/delete-scenario.active.svg');
+        }
+    }
+
+    &.edit-scenario {
+        display: block;
+        background-image: url('../../assets/icons/edit-scenario.svg');
+    }
+
+    &.go-back {
+        display: block;
+        width: 8px;
+        height: 13px;
+        background-image: url('../../assets/icons/go-back.svg');
+    }
+
+    &.go-prev {
+        width: 20px;
+        height: 20px;
+        background-image: url('../../assets/icons/go-prev.svg');
+    }
+
+    &.wifi-tower {
+        width: 20px;
+        height: 24px;
+        background-image: url('../../assets/icons/wifi-tower.svg');
+
+        &:hover {
+            background-image: url('../../assets/icons/wifi-tower.active.svg');
+        }
+    }
+
+    &.pending-clock {
+        display: block;
+        cursor: default;
+        margin-right: 15px;
+        width: 25px;
+        height: 25px;
+        background-image: url('../../assets/icons/pending-clock.svg');
+    }
+
+    &.refresh {
+        display: block;
+        width: 36px;
+        height: 36px;
+        background-image: url('../../assets/icons/refresh.svg');
+    }
+
+    &.arrow-down {
+        display: block;
+        width: 12px;
+        height: 12px;
+        background-image: url('../../assets/icons/arrow-down.svg');
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &.sort {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url('../../assets/icons/arrow-triangle-down.svg');
+    }
+
+    &.armed {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/icons/armed.svg');
+        transition: none;
+    }
+
+    &.disarmed {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/icons/disarmed.svg');
+        transition: none;
+    }
+
+    &.danger {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/icons/danger.svg');
+        transition: none;
+    }
+
+    &.panic {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/icons/panic.svg');
+        transition: none;
+    }
+}

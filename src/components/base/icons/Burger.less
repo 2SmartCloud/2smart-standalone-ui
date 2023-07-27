@@ -1,0 +1,32 @@
+@import "../../../assets/styles/colors.less";
+@import "../../../assets/styles/media.less";
+
+.BurgerIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 100%;
+    flex-shrink: 0;
+    border-right: 1px solid var(--primary_border_color);
+    cursor: pointer;
+
+    & rect {
+        transition: fill 0.3s, stroke 0.3s;
+        fill: var(--color_icon);
+        stroke: var(--color_icon);
+    }
+
+    @media (max-width: @max-width__500) {
+        width: 70px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            & rect {
+                fill: var(--color_icon--hover);
+                stroke: var(--color_icon--hover);
+            }
+        }
+    }
+}

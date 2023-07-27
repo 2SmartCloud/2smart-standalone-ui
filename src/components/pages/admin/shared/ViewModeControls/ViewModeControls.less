@@ -1,0 +1,65 @@
+@import "../../../../../assets/styles/colors.less";
+@import "../../../../../assets/styles/media.less";
+
+@color__dark-green: #4B7A78;
+@color__green: #04BAAC;
+
+.ViewModeControls {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+    font-size: 10px;
+
+    @media (max-width: @max-width__mobile) {
+        grid-gap: 5px;
+    }
+
+    .control {
+        padding: 2px 6px;
+        background: transparent;
+        border: 1px solid @color__green;
+        color: @color__green;
+        border-radius: 3px;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s ease;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                box-shadow: 0 2px 9px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        &.active {
+            background: @color__green;
+            color: #FFF;
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+
+    @media (max-width: @max-width__mobile) {
+        grid-gap: 5px;
+    }
+
+    &.DARK {
+        .control {
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    box-shadow: 0 2px 9px @color__dark-green;
+                }
+            }
+        }
+    }
+}

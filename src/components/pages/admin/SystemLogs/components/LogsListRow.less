@@ -1,0 +1,56 @@
+@import "../../../../../assets/styles/media.less";
+
+.LogsListRow {
+    &:not(:last-child) {
+        border-bottom: 1px solid var(--secondary_split_line_color);
+    }
+
+    .row {
+        height: 36px;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            color: var(--primary_text_color--hover);
+        }
+    }
+
+    .collapsible {
+        background-color: var(--secondary_background_color);
+        padding: 10px 15px;
+        white-space: pre-wrap;
+        word-break: break-all;
+        font-size: 13px;
+        line-height: 16px;
+
+        &.mono {
+            font-family: 'Ubuntu Mono', monospace;
+        }
+    }
+
+    .logLevel {
+        justify-content: center;
+    }
+
+    .containerName,
+    .time {
+        font-weight: 400;
+    }
+
+    .expanded i {
+        transform: rotate(180deg);
+    }
+}
+
+.tooltip {
+    word-break: break-all;
+}
+
+@media (max-width: @max-width__870) {
+    .LogsListRow {
+        .message {
+            display: none;
+        }
+    }
+}

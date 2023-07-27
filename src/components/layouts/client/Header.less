@@ -1,0 +1,313 @@
+@import './../../../assets/styles/colors.less';
+@import './../../../assets/styles/scales.less';
+@import './../../../assets/styles/media.less';
+
+@height__header_650: 120px;
+
+.Header {
+    height: @height__header;
+    border: 1px solid var(--primary_border_color);
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--primary_background_color);
+    border-left: 0;
+    flex-shrink: 0;
+
+    &.isEditing {
+        @media (max-width: @max-width__600) {
+            display: flex;
+            flex-direction: column;
+            height: @height__header_650;
+
+            .wrapper {
+                height: 50%;
+                border-bottom: 1px solid var(--primary_border_color);
+                flex-shrink: 0;
+            }
+
+            .buttonsContainer {
+                @media (max-width: @max-width__tablet) {
+                    padding: 0 12px;
+                }
+            }
+        }
+
+        @media (max-width: @max-width__320) {
+            height: 100px;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        height: 100%;
+        flex-grow: 1;
+        overflow: hidden;
+    }
+
+    .burger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 100%;
+        flex-shrink: 0;
+        border-right: 1px solid var(--primary_border_color);
+        cursor: pointer;
+
+        @media (max-width: @max-width__500) {
+            width: 70px;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                .burgerIcon {
+                    background: url('../../../assets/icons/burgerActive.svg');
+                }
+            }
+        }
+    }
+
+    .title {
+        width: 100%;
+        padding-left: @padding-29;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .title > input {
+        min-width: 80px;
+        max-width: 250px;
+        height: 20px;
+    }
+
+    &.isEditing > .title {
+        @media (max-width: @max-width__600) {
+            border-bottom: none;
+        }
+    }
+
+    .parentControlSwitchWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 30px;
+
+        & > span {
+            margin-right: 5px;
+            color: var(--primary_text_color);
+        }
+    }
+
+    .editIconWrapper {
+        width: 28px;
+        height: 28px;
+    }
+
+    .deleteWrapper {
+        margin-right: auto;
+
+        path {
+            fill: var(--color_icon);
+            transition: fill 0.3s;
+        }
+
+        &:hover {
+            path {
+                fill: var(--color_icon--hover);
+            }
+        }
+
+        > button {
+            padding: 0;
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    background: none;
+                }
+            }
+        }
+
+        @media (max-width: @max-width__600) {
+            margin-right: 0;
+        }
+    }
+
+    .deleteBtn {
+        color: #E9E9E9;
+        transition: color 0.3s ease-in-out;
+        width: 25px;
+        height: 30px;
+        padding-top: 7px;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                cursor: pointer;
+                color: @color__control;
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        .parentControlSwitchWrapper {
+            text-align: right;
+            margin-right: 15px;
+        }
+
+        .title {
+            padding-left: 15px;
+        }
+    }
+
+    .buttonsContainer {
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row-reverse;
+
+        @media (max-width: @max-width__600) {
+            justify-content: space-between;
+
+            .btnContainer {
+                width: 200px;
+                height: 38px;
+            }
+        }
+
+        @media (max-width: @max-width__400) {
+            .parentControlSwitchWrapper {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0;
+                font-size: 14px;
+
+                & > span {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .btnContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: 1px solid var(--primary_border_color);
+        padding: @padding-15 @padding-29;
+        right: 0;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        -webkit-tap-highlight-color: transparent;
+
+        @media (max-width: @max-width__600) {
+            height: 50%;
+            padding: 0;
+            border-left: 0;
+        }
+    }
+
+    .submitButton {
+        width: 150px;
+        background: @color__base-blue-btn;
+
+        @media (max-width: @max-width__600) {
+            width: 280px;
+        }
+    }
+
+    .lockIcon {
+        path {  /* stylelint-disable no-descending-specificity */
+            fill: @color__aqua;
+        }
+    }
+
+    .editButtonContainer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        width: 87px;
+        border-left: 1px solid var(--primary_border_color);
+        color: @color__aqua;
+        transition: color 0.3s ease-in-out;
+        cursor: pointer;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: #02776C;
+
+                .lockIcon {
+                    path {
+                        fill: #02776C;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: @max-width__400) {
+            border-left: 0;
+        }
+
+        &.disabled {
+            color: var(--color_icon);
+            cursor: initial;
+
+            .lockIcon {
+                path {
+                    fill: var(--color_icon);
+                }
+            }
+        }
+    }
+
+    .lockIconWrapper {
+        position: absolute;
+        top: 53%;
+        left: 53%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 30px;
+    }
+
+    @media (max-width: @max-width__600) {
+        height: @height__header_650 /2;
+
+        .title {
+            padding: 5px 5px 5px 10px;
+        }
+
+        .editBtn {
+            width: 24px;
+            height: 24px;
+        }
+
+        .editButtonContainer {
+            width: 60px;
+        }
+
+        .lockIconWrapper {
+            width: 16px;
+            height: 26px;
+        }
+
+        .parentControlSwitchWrapper {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: @max-width__320), (max-height: @max-width__400) {
+        height: 50px;
+
+        .lockIconWrapper {
+            width: 16px;
+            height: 26px;
+        }
+    }
+}

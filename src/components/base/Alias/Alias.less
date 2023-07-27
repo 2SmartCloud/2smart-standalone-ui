@@ -1,0 +1,136 @@
+@import '../../../assets/styles/colors.less';
+@import '../../../assets/styles/media.less';
+@import '../../../assets/styles/mixins.less';
+@alias-height: 20px;
+@alias-padding: 3px;
+@copy-button-width: 10px;
+@max-width: 260px;
+
+.Alias {
+    display: inline-flex;
+    background-color: var(--group_background_color);
+    color: var(--primary_text_color) !important;
+    border: 1px solid var(--group_border_color) !important;
+    border-radius: 4px;
+    height: @alias-height;
+    padding: @alias-padding;
+    width: fit-content;
+    font-size: 10px;
+    font-weight: 300;
+    max-width: 260px;
+    opacity: 0.99;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    justify-content: space-between;
+    text-decoration: none;
+
+    .copyButtonWrapper {
+        width: @copy-button-width;
+        height: 13px;
+    }
+
+    .controlWrapper {
+        height: @alias-height;
+        color: var(--primary_text_color);
+
+        * {
+            font-size: 10px;
+            font-weight: 300 !important;
+        }
+
+        button[type='submit'] {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    .valueWrapper {
+        max-width: calc(@max-width - @copy-button-width - 2 * @alias-padding - 3px);
+    }
+
+    .inputWrapper {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        > div {
+            margin-right: 2px;
+        }
+    }
+
+    .aliasInput {
+        height: 13px;
+
+        input {
+            font-size: 9px;
+            line-height: 9px;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+
+            &:focus {
+                box-shadow: none !important;
+            }
+        }
+    }
+
+    &.isNew {
+        background-color: var(--group_secondary_background_color);
+
+        /* color: var(--mini-select_text_color); */
+        border: none !important;
+        justify-content: center;
+        font-size: 10px;
+        padding: 0 4px;
+
+        .createButton {
+            border-bottom: 1px dashed var(--alias-dashed-color);
+        }
+    }
+
+    &.disabled {
+        pointer-events: none !important;
+        background-color: #ABABAB !important;
+        color: #000 !important;
+        user-select: none;
+
+        &.isNew {
+            .createButton {
+                border-bottom: 1px dashed #2C2C2C;
+            }
+        }
+    }
+
+    .copyField {
+        min-height: 13px;
+        font-size: 10px;
+        line-height: 10px;
+        padding: 0;
+        background-color: var(--group_background_color);
+
+        span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &::selection {
+            background: var(--background_grey);
+        }
+    }
+}
+
+.tooltip {
+    max-width: 200px;
+    word-break: break-all;
+}
+
+.spinner {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: @color__aqua !important;
+}

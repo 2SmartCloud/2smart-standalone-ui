@@ -1,0 +1,55 @@
+@import "../../assets/styles/colors.less";
+
+.GeneralStatus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+
+    &.init,
+    &.sleeping {
+        .indicator {
+            background-color: #FFC88B;
+        }
+    }
+
+    &.ready {
+        .indicator {
+            background-color: #81E69C;
+        }
+    }
+
+    &.disconnected,
+    &.lost,
+    &.alert {
+        .indicator {
+            background-color: rgba(206, 1, 1, 0.492515);
+        }
+    }
+
+    &.isNodeDisable {
+        .indicator {
+            border-color: @color__background-disable;
+            background-color: @color__background-disable;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                cursor: default;
+            }
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

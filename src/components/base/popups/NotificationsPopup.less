@@ -1,0 +1,189 @@
+@import "../../../assets/styles/colors.less";
+@import "../../../assets/styles/media.less";
+
+@c-grey-light: red;
+@c-grey-medium: grey;
+@c-grey-dark: green;
+@c-control: #80DCD5;
+@c-control-hover: #4EC1B9;
+@s-gap-s: 8px;
+@s-gap-xs: 4px;
+@c-black: #000;
+@s-list-height: 206px;
+
+.NotificationsPopup {
+    color: var(--primary_text_color);
+    position: relative;
+    padding: 0;
+    width: 345px;
+
+    @media (max-width: @max-width__mobile) {
+        width: 100%;
+    }
+
+    .notificationsWrapper {
+        max-height: @s-list-height;
+        overflow: auto;
+        margin-bottom: @s-gap-s;
+    }
+
+    .heading {
+        padding: 0 10px;
+    }
+
+    &.loading {
+        .heading,
+        .notificationsWrapper {
+            pointer-events: none;
+            filter: blur(3px);
+        }
+
+        .notificationsWrapper {
+            min-height: 120px;
+        }
+    }
+
+    &.blurred {
+        .heading,
+        .notificationsWrapper {
+            filter: blur(3px);
+            pointer-events: none !important;
+        }
+    }
+
+    .popupTitle {
+        padding: 16px 0 5px 0;
+        min-height: 35px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 14px;
+        text-align: center;
+        letter-spacing: -0.107143px;
+        color: var(--primary_text_color);
+        user-select: none;
+    }
+
+    .closeIcon {
+        position: absolute !important;
+        z-index: 10;
+        top: 10px;
+        right: 10px;
+        padding: 0;
+        color: var(--color_icon) !important;
+
+        @media @hover__not-touch {
+            &:hover {
+                background-color: transparent !important;
+                color: var(--color_icon--hover) !important;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .controlsWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0 10px 0;
+    }
+
+    .footer {
+        display: flex;
+        margin: @s-gap-xs auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loaderWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .emptyListWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 125px;
+        pointer-events: none;
+        user-select: none;
+
+        .iconWrapper {
+            svg {
+                width: 50px;
+                height: 50px;
+            }
+
+            path {
+                fill: @c-grey-light;
+            }
+        }
+
+        .emptyListMessage {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--secondary_text_color);
+            margin-bottom: 24px;
+        }
+    }
+
+    .subtitle {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 14px;
+        letter-spacing: -0.107143px;
+        color: @c-black;
+    }
+
+    .control {
+        display: inline-flex;
+        align-items: center;
+        padding: 0;
+        background-color: transparent;
+        outline: 0;
+        border: 0;
+        color: var(--primary_text_color);
+        font-size: 11px;
+        font-weight: 300;
+        line-height: 13px;
+        letter-spacing: -0.107143px;
+        word-spacing: 0.01rem;
+        cursor: pointer;
+        pointer-events: all;
+        user-select: none;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+
+        .groupsVisibilityButton {
+            font-style: normal;
+
+            @media (max-width: @max-width__mobile) {
+                width: 50px;
+            }
+        }
+
+        &.invisible {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @media @hover__not-touch {
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: @max-width__mobile), (max-height: @max-width__400) {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+}

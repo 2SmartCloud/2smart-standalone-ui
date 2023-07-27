@@ -1,0 +1,46 @@
+@import '../../../../assets/styles/colors.less';
+@import '../../../../assets/styles/media.less';
+
+@c-button-hover: #C2D3DA;
+@c-button-checked: @color__aqua;
+@c-grey-medium: #B3B3B3;
+
+.Checkbox {
+    display: flex;
+    padding: 5px;
+    cursor: pointer;
+
+    @media @hover__not-touch {
+        &:hover {
+            .button {
+                background: @c-button-hover;
+                border: 1px solid @c-grey-medium !important;
+                opacity: 0.6;
+            }
+        }
+    }
+
+    .button {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border: 1px solid @c-grey-medium;
+        background: #FFF;
+        border-radius: 50%;
+        outline: 0;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    &.checked {
+        .button {
+            background: @c-button-checked;
+            border: 1px solid @c-button-checked;
+        }
+    }
+}
+
+.tooltipPlacementBottom {
+    font-weight: 500 !important;
+    padding: 4px 8px !important;
+}

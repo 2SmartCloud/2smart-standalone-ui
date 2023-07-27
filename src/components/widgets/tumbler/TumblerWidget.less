@@ -1,0 +1,133 @@
+.tumblerWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700 !important;
+    color: var(--primary_text_color);
+    max-width: 100%;
+    width: 100%;
+
+    .loaderWrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: transparent;
+        color: #FFF;
+        z-index: 4;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    .loaderOff {
+        display: block;
+    }
+
+    .loaderOn {
+        display: none;
+    }
+}
+
+.unit {
+    margin-left: 10px;
+    max-width: calc(100% - 54px);
+}
+
+.Tumbler {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 54px;
+    height: 25px;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #BDC1C4;
+
+    .sectionOn,
+    .sectionOff {
+        position: relative;
+        height: 100%;
+        flex: 1;
+        padding-left: 3px;
+        transition: background 0.2s ease-in-out, padding-left 0s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 2px;
+            height: 100%;
+            width: 1px;
+            background: #FFF;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .sectionOff {
+        background: #04BAAC;
+        transform: rotate(180deg);
+        padding-left: 0;
+
+        &::before {
+            content: none;
+        }
+
+        &::after {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: 1px solid #FFF;
+        }
+    }
+
+    .sectionOn {
+        &::after {
+            width: 10px;
+            height: 1px;
+            background: #FFF;
+        }
+    }
+
+    &.active {
+        .sectionOff {
+            background: transparent;
+            padding-left: 3px;
+
+            &::before {
+                content: '';
+            }
+        }
+
+        .sectionOn {
+            background: #04BAAC;
+            padding-left: 0;
+
+            &::before {
+                content: none;
+            }
+        }
+
+        .loaderOn {
+            display: block;
+        }
+
+        .loaderOff {
+            display: none;
+        }
+    }
+
+    &.disabled,
+    &.processing {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}

@@ -1,0 +1,101 @@
+.BatteryWidget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--primary_text_color);
+
+    .valueWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .value {
+        max-width: 50px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .unit {
+        margin-left: 2px;
+        max-width: 50px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .battery {
+        position: relative;
+        display: flex;
+        flex-shrink: 0;
+        width: 33%;
+        max-width: 90px;
+        height: 40%;
+        max-height: 52px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent;
+        border-radius: 3px;
+        margin-left: 7px;
+        margin-right: 3px;
+        transition: border-color 0.3s ease-in-out;
+
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+        }
+
+        .progress {
+            height: 100%;
+            max-width: 100%;
+            min-width: 0;
+            transition: background-color 0.3s ease-in-out;
+        }
+    }
+
+    &.invalid {
+        .battery .bg {
+            opacity: 1;
+        }
+
+        .battery {
+            &::before {
+                content: '?';
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                bottom: 50%;
+                color: #000;
+                font-size: 16px;
+                line-height: 0;
+                transform: translateX(-50%);
+            }
+        }
+
+        .value,
+        .unit {
+            display: none;
+        }
+    }
+
+    .batteryStub {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        width: 3px;
+        height: 18px;
+        border-radius: 1px;
+        transform: translateY(-50%);
+        transition: background-color 0.3s ease-in-out;
+    }
+}
+
+.tooltip {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}

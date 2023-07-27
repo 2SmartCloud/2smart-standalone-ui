@@ -1,0 +1,231 @@
+@import './../../../assets/styles/colors.less';
+@import './../../../assets/styles/scales.less';
+@import './../../../assets/styles/media.less';
+
+@height__button : 45px;
+@padding-top__button: 30px;
+@padding-top__button--mobile: 10px;
+@padding-bottom__button: 30px;
+@padding-bottom__button--mobile: 10px;
+@border-width__button-wrapper : 1px;
+@height__button-wrapper: @height__button + @padding-top__button + @padding-bottom__button + @border-width__button-wrapper * 2;
+@height__button-wrapper--mobile : @height__button + @padding-top__button--mobile + @padding-bottom__button--mobile + @border-width__button-wrapper * 2;
+@margin-top__button-wrapper: 20px;
+@margin-top__button-wrapper--mobile: 0;
+@height__controls: 120px;
+@height__controls--mobile: 120px;
+
+.Sidebar {
+    height: calc(100% - 74px);
+    display: flex;
+    flex-direction: column;
+
+    &.open {
+        pointer-events: all;
+        width: @width__sidebar_desktop;
+        opacity: 1;
+        transition: width 0.2s ease-out, opacity 0.2s ease-in;
+    }
+
+    .screenListWrapper {
+        height: calc(100% - (@height__button-wrapper) - (@margin-top__button-wrapper) - @height__controls);
+        width: 100%;
+
+        @media (max-width: @max-width__mobile), (max-height: 650px) {
+            height: calc(100% - (@height__button-wrapper--mobile) - @height__controls--mobile - 10px);
+            margin-bottom: 10px;
+        }
+    }
+
+    .lockIcon {
+        path {
+            fill: #FFF;
+        }
+
+        &.exitSession {
+            path {
+                fill: var(--color_icon);
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                path {
+                    fill: var(--color_icon--hover);
+                }
+            }
+        }
+    }
+
+    .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        display: none;
+
+        @media (max-width: @max-width__sidebar-mobile-view) {
+            display: block;
+        }
+
+        path {  /* stylelint-disable-line */
+            fill: var(--color_icon);
+            transition: fill 0.3s ease;
+        }
+
+        &:hover {
+            path {  /* stylelint-disable-line */
+                fill: var(--color_icon--hover);
+            }
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: var(--color_scroll_track);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: @color__ligth-spring-green;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        margin: 0 auto;
+        width: 180px;
+        height: @height__controls;
+        font-weight: 500;
+        color: var(--primary_text_color);
+
+        @media (max-width: @max-width__sidebar-mobile-view) {
+            width: 200px;
+        }
+
+        @media (max-width: @max-width__mobile), (max-height: 650px) {
+            height: @height__controls--mobile;
+        }
+    }
+
+    .control {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .addScreenButtonWrapper {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: @height__button-wrapper;
+        border: @border-width__button-wrapper solid var(--primary_border_color);
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        margin-top: 20px;
+        padding: @padding-top__button 0 @padding-bottom__button;
+
+        @media (max-width: @max-width__mobile), (max-height: 650px) {
+            height: @height__button-wrapper--mobile;
+            padding: @padding-bottom__button--mobile 20px @padding-bottom__button--mobile;
+            margin-top: @margin-top__button-wrapper--mobile;
+        }
+    }
+
+    .addScreenButton {
+        position: relative;
+        background: @color__aqua;
+        width: 180px;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                box-shadow: 0 2px 9px @color__aqua;
+            }
+        }
+
+        @media (max-width: @max-width__sidebar-mobile-view) {
+            width: 100%;
+            max-width: 200px;
+        }
+    }
+
+    .buttonContentContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .buttonLabel {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .lockIconWrapper {
+        position: absolute;
+        right: 7px;
+        top: 13px;
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (max-width: @max-width__sidebar-mobile-view) {
+        .lockIconWrapper {
+            right: 15px;
+        }
+    }
+
+    @media (max-width: @max-width__sidebar-mobile-view) and (max-height: 400px) {
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 550px;
+
+        .screenListWrapper {
+            flex: 0 1 100%;
+            height: calc(100% - 77px);
+        }
+
+        .addScreenButtonWrapper {
+            flex: 1 0;
+            width: 27%;
+            height: 67px;
+            padding: 11px 20px 10px;
+        }
+
+        .controls {
+            flex: 2 0;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            width: 73%;
+            height: 67px;
+            margin: 0;
+            padding-right: 20px;
+            border-top: @border-width__button-wrapper solid var(--primary_border_color);
+        }
+
+        .control {
+            justify-content: space-between;
+            align-items: center;
+            width: 160px;
+            margin-top: 0;
+
+            &:first-child {
+                margin-left: 15px;
+            }
+        }
+    }
+}

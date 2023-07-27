@@ -1,0 +1,91 @@
+@import "../../assets/styles/colors.less";
+
+@height__root: 24px;
+
+@width__root: @height__root * 2;
+
+@padding__switch: 3px;
+
+@height__thumb: @height__root - @padding__switch * 2;
+
+@width__thumb: @height__thumb;
+
+@translate-x__switch-checked: @width__root - @padding__switch * 2 - @width__thumb;
+
+.Switch {
+    position: relative;
+
+    .root {
+        width: @width__root !important;
+        height: @height__root !important;
+        padding: 0 !important;
+        display: flex !important;
+    }
+
+    .thumb {
+        width: @width__thumb !important;
+        height: @height__thumb !important;
+        box-shadow: none !important;
+        background-color: white !important;
+
+        &.processing {
+            background: transparent !important;
+        }
+    }
+
+    .track {
+        border-radius: @width__root / 4px !important;
+        background-color: var(--background_color_switch-thumb) !important;
+        opacity: 1 !important;
+    }
+
+    .switchBase {
+        padding: @padding__switch !important;
+        color: @color__very-light-grey !important;
+
+        &.checked {
+            color: #FFF !important;
+        }
+
+        &.checked + .track {
+            background-color: @color__aqua !important;
+            opacity: 1 !important;
+        }
+
+        &.disabled + .thumb {
+            background-color: white !important;
+        }
+
+        &.disabled + .track {
+            opacity: 0.2 !important;
+        }
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .loaderWrapper {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: @width__thumb;
+        height: @height__thumb;
+        top: @padding__switch;
+        left: @padding__switch;
+        background: transparent;
+        z-index: 4;
+        opacity: 1;
+        color: #FFF;
+        pointer-events: none;
+
+        &.checked {
+            transform: translateX(@translate-x__switch-checked);
+        }
+    }
+
+    .progressSvg {
+        display: block;
+    }
+}

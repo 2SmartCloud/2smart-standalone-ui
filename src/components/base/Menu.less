@@ -1,0 +1,88 @@
+@import './../../assets/styles/colors.less';
+
+.Menu {
+    > button {
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background: none;
+            }
+        }
+    }
+
+    .openBtn {
+        padding: 0;
+        color: @color__control;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background-color: transparent;
+                color: @color__widget-controls;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.list {
+    min-width: 150px;
+    background-color: var(--primary_background_color) !important;
+}
+
+.paper {
+    background-color: var(--primary_background_color) !important;
+}
+
+.menuOption {
+    padding: 15px 15px;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+    min-width: 180px;
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    color: var(--primary_text_color);
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background-color: @color__ligth-spring-green;
+        }
+    }
+
+    .option-icon-edit {
+        width: 20px;
+        height: 20px;
+        background-image: url('../../assets/icons/edit-btn.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        -webkit-tap-highlight-color: transparent;
+
+        &.dark {
+            background-image: url('../../assets/icons/edit-btn_dark.svg');
+        }
+    }
+
+    .option-icon-delete {
+        width: 20px;
+        height: 20px;
+        background-image: url('../../assets/icons/trash.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        -webkit-tap-highlight-color: transparent;
+
+        &.dark {
+            background-image: url('../../assets/icons/trash_dark.svg');
+        }
+    }
+
+    .label {
+        margin-left: 10px;
+    }
+}

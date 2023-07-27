@@ -1,0 +1,118 @@
+@import './../../../../assets/styles/colors.less';
+@import './../../../../assets/styles/scales.less';
+@import './../../../../assets/styles/media.less';
+
+/* stylelint-disable no-descending-specificity */
+.ScheduleControl {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &:hover {
+        input {
+            border-color: var(--border_color_hover_select) !important;
+        }
+
+        .buttonWrapper {
+            background: @color__aqua !important;
+            border-color: @color__aqua !important;
+            cursor: pointer;
+
+            svg {
+                path {
+                    fill: white;
+                    transition: fill 0.2s ease;
+                }
+            }
+        }
+    }
+
+    .input {
+        width: 100%;
+        height: 100%;
+        margin-right: 10px;
+        padding: 1px 10px;
+        color: #000;
+        border-radius: @border-radius__input;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 16px;
+        border: 1px solid @color__border-input;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        outline: none;
+        cursor: pointer !important;
+
+        &::placeholder {
+            color: var(--placeholder_text_color);
+            font-weight: 300;
+            user-select: none;
+        }
+
+        &:focus {
+            border-color: var(--border_color_active_select);
+        }
+    }
+}
+
+.ScheduleControl.dark {
+    .input {
+        background: var(--input_background_color);
+        color: var(--primary_text_color);
+        border-color: var(--border_color_select);
+        transition: border-color 0.3s;
+        -webkit-appearance: none;
+    }
+
+    .buttonWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10%;
+        height: 36px;
+        padding: 5px;
+        background: transparent;
+        border: 2px solid;
+        border-color: transparent;
+        border-radius: 5px;
+        color: @color__aqua;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        @media @hover__not-touch {
+            &:hover + .input {
+                border-color: var(--border_color_hover_select);
+            }
+
+            &:hover {
+                background: @color__aqua;
+                border-color: @color__aqua;
+
+                svg {
+                    path {
+                        fill: white;
+                        transition: fill 0.3s ease;
+                    }
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.ScheduleControl.invalid {
+    .input {
+        border-color: red !important;
+
+        &:focus {
+            border-color: red !important;
+            box-shadow: none !important;
+        }
+    }
+}

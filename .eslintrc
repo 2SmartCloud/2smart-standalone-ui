@@ -1,0 +1,38 @@
+{
+    "extends": "webbylab",
+    "settings": {
+        "react": {
+            "version": "16.8.6"
+        }
+    },
+    "rules": {
+        "no-param-reassign": 0,
+        "more/no-window": 0,
+        "import/no-named-default": 0,
+        "react/jsx-closing-tag-location" : 0,
+        "react/jsx-closing-bracket-location" : 0,
+        "react/no-did-mount-set-state": 0, // deprecated rule
+        "react/no-did-update-set-state" : 0, // deprecated rule
+        "newline-after-var": 0, // deprecated rule
+        "newline-before-return": 0, // deprecated rule
+        "no-unused-expressions": 0, // rather harms than helps
+        "padding-line-between-statements": [
+            "warn",
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": ["return"]
+            },
+            {
+                "blankLine": "always",
+                "prev": ["var", "let", "const"],
+                "next": ["*"]
+            },
+            {
+                "blankLine": "any",
+                "prev": ["var", "let", "const"],
+                "next": ["var", "let", "const"]
+            }
+        ]
+    }
+}

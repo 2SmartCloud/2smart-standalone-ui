@@ -1,0 +1,41 @@
+@import "../../../../../assets/styles/media.less";
+
+.SetpointsContainer {
+    display: flex;
+    white-space: nowrap;
+    max-width: 100%;
+    margin-right: 10px;
+    overflow-y: hidden;
+    min-height: 18px;
+    font-size: 14px;
+    color: var(--primary_text_color);
+    user-select: none;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+
+    .processing {
+        padding: 5px;
+    }
+
+    .setpointsWrapper {
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .setpointValue {
+            border-bottom: 1px dashed var(--editable-control_border-color);
+            transition: all 0.3s ease;
+
+            @media @hover__not-touch {
+                &:hover {
+                    border-bottom: 1px dashed transparent;
+                }
+            }
+        }
+    }
+
+    @media (max-width: @max-width__mobile) {
+        justify-content: flex-start;
+        margin-right: 5px;
+    }
+}

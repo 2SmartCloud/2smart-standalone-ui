@@ -1,0 +1,255 @@
+@import "../../../../../assets/styles/media.less";
+@import "../../../../../assets/styles/colors.less";
+
+@height__footer: 89px;
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+    margin-bottom: 20px;
+    width: 95%;
+    max-width: 570px;
+    height: calc(100% - @height__footer);
+    user-select: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .contentBlock {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        .resetWrapperIntervals {
+            display: flex;
+            justify-content: flex-end;
+            margin: 0 auto 5px;
+            padding-right: 5px;
+            width: 280px;
+            cursor: pointer;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .multipleSwitcherWrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .multipleSwitcher {
+                position: relative;
+                width: 280px;
+
+                .modeSwitcher {
+                    width: 72px;
+                    height: 44px;
+                    margin: 30px 1px 25px;
+                }
+
+                .refreshWrapper {
+                    cursor: pointer;
+                    transition: opacity 0.3s ease-in-out;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+
+                .iconWrapper {
+                    position: absolute;
+                    right: 5px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        .title {
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--primary_text_color);
+        }
+
+        .intervalTimeWrapper {
+            margin: 0 auto 20px auto;
+            width: 187px;
+            height: 50px;
+        }
+
+        .timeWrapper {
+            margin: 0 auto 44px auto;
+            width: 187px;
+            height: 50px;
+
+            .initialTime {
+                width: inherit;
+                height: inherit;
+                color: var(--primary_text_color);
+                text-align: center;
+                font-size: 48px;
+                cursor: pointer;
+            }
+        }
+
+        .switchTimeWrapper {
+            display: flex;
+            margin: 0 auto 21px auto;
+
+            .timeBlock {
+                width: 174px;
+
+                &:first-child {
+                    margin-right: 20px;
+                }
+
+                .timeBlockTitle {
+                    margin-bottom: 6px;
+                    text-align: center;
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: var(--schedule_input_title);
+                }
+            }
+        }
+
+        .monthListWrapper {
+            width: 286px;
+            margin: 0 auto;
+
+            .month {
+                margin-bottom: 15px;
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                grid-row-gap: 10px;
+            }
+        }
+
+        .daysListWrapper {
+            width: 280px;
+            margin: 0 auto;
+
+            .daysList {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                grid-row-gap: 10px;
+            }
+        }
+
+        .datePicker {
+            width: 280px;
+            margin: 20px auto 20px auto;
+        }
+
+        .toggle {
+            display: flex;
+            margin: 0 auto;
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: rgba(8, 174, 234, 0.5);
+            cursor: pointer;
+
+            .arrow {
+                display: block;
+                width: 14px;
+                height: 14px;
+                margin-top: 2px;
+                margin-left: 5px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: background-image 0.25s linear;
+
+                &.arrowDown {
+                    background-image: url('../../../../../assets/icons/arrow-down-blue.svg');
+                    transition: transform 0.3s ease-in-out;
+                }
+
+                &.arrowUp {
+                    background-image: url('../../../../../assets/icons/arrow-up-blue.svg');
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    height: 89px;
+}
+
+@media (max-width: 320px) {
+    .content {
+        .contentBlock {
+            .monthListWrapper {
+                width: 245px;
+            }
+
+            .daysListWrapper {
+                width: 264px;
+            }
+
+            .datePicker {
+                width: 260px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .content {
+        .contentBlock {
+            width: 563px;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: @max-width__mobile) {
+    .content {
+        .contentBlock {
+            .multipleSwitcherWrapper {
+                .multipleSwitcher {
+                    .modeSwitcher {
+                        margin-top: 10px;
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+
+            .switchTimeWrapper {
+                display: block;
+                margin: 0 auto 20px auto;
+                width: 280px;
+
+                .timeBlock {
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+
+                    &:first-child {
+                        margin: 0 auto 15px auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .content {
+        .contentBlock {
+            .resetWrapperIntervals {
+                &:hover {
+                    opacity: 0.7;
+                    transition: opacity 0.3s ease-in;
+                }
+            }
+        }
+    }
+}

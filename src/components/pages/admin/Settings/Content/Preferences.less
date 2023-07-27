@@ -1,0 +1,55 @@
+@import "../../../../../assets/styles/colors.less";
+@import "../../../../../assets/styles/media.less";
+
+@height__input: 50px;
+@height__error-message: 16px;
+@line-height__label: 26px;
+@width__form-wrapper: 330px;
+
+@font-size__error-message: 12px;
+
+.inputConatiner {
+    width: 100%;
+    padding-bottom: 5px;
+
+    .inputLabel {
+        font-size: 14px;
+        line-height: @line-height__label;
+    }
+
+    .inputWrapper {
+        height: @height__input;
+    }
+
+    .errorMessage {
+        min-height: @height__error-message;
+        height: 100%;
+        color: @color__warning-txt-red;
+        font-size: @font-size__error-message;
+        user-select: none;
+
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
+}
+
+.submitButtonWrapper {
+    margin: 0;
+
+    .submitButton {
+        margin: 0;
+        margin-right: auto;
+        width: 150px;
+    }
+}
+
+@media (max-width: @max-width__mobile) {
+    .submitButtonWrapper {
+        width: 100%;
+
+        .submitButton {
+            width: 100%;
+        }
+    }
+}

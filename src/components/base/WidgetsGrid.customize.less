@@ -1,0 +1,86 @@
+.layout {
+    position: relative;
+}
+
+.columns {
+    -moz-columns: 120px;
+    -webkit-columns: 120px;
+    columns: 120px;
+}
+
+.react-grid-item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.react-grid-item:not(.react-grid-placeholder) {
+    background: #FFF;
+    border-radius: 3px;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.0336265);
+}
+
+.react-grid-item.resizing {
+    opacity: 0.9;
+}
+
+.react-grid-item.static {
+    background: #CCE;
+}
+
+.react-grid-item .minMax {
+    font-size: 12px;
+}
+
+.react-grid-item .add {
+    cursor: pointer;
+}
+
+.react-grid-dragHandleExample {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+li b {
+    font-size: 19px;
+    line-height: 14px;
+}
+
+.toolbox {
+    background-color: #DFD;
+    width: 100%;
+    height: 120px;
+    overflow: scroll;
+}
+
+.hide-button {
+    cursor: pointer;
+    position: absolute;
+    font-size: 20px;
+    top: 0;
+    right: 5px;
+}
+
+.toolbox__title {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.toolbox__items {
+    display: block;
+}
+
+.toolbox__items__item {
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: #DDD;
+}

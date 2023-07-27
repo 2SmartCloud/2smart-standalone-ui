@@ -1,0 +1,38 @@
+@import "../../../assets/styles/colors.less";
+
+.WifiTower {
+    position: relative;
+
+    path {
+        fill: var(--color_icon);
+        transition: fill 0.3s;
+    }
+
+    &:hover {
+        path {
+            fill: var(--color_icon--hover);
+        }
+    }
+
+    .newDeviceIndicator {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: @color__deep-green;
+    }
+}
+
+.WifiTower.DARK {
+    .newDeviceIndicator {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: @color-green-dark;
+    }
+}

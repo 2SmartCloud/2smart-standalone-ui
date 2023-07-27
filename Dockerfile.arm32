@@ -1,0 +1,11 @@
+FROM arm32v7/node:12-alpine
+
+COPY build build
+COPY serve.js serve.js
+COPY config.js config.js
+COPY package.json package.json
+COPY create_conf.sh create_conf.sh
+
+RUN npm i --save express path
+
+CMD npm run serve

@@ -1,0 +1,32 @@
+@import "../../../../assets/styles/scales.less";
+
+.IconOption {
+    display: flex;
+    align-items: center;
+
+    .icon,
+    .fallbackIcon {
+        width: @width__option-icon;
+        height: @height__option-icon;
+        margin-right: 10px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .fallbackIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        background-color: rgba(4, 192, 178, 0.07);
+        color: #04C0B2;
+        font-weight: 800;
+        user-select: none;
+    }
+
+    .optionLabel {
+        color: var(--primary_text_color);
+        text-transform: capitalize;
+    }
+}

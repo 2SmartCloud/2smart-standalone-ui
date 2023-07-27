@@ -1,0 +1,25 @@
+
+.ChartWidget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .messageWrapper {
+        width: 100%;
+        height: calc(100% - 15px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .message {
+            font-style: italic;
+            color: #979797;
+        }
+    }
+
+    canvas {
+        cursor: crosshair;
+    }
+}

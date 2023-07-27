@@ -1,0 +1,35 @@
+@import './../../../../assets/styles/media.less';
+@import './../../../../assets/styles/colors.less';
+
+.EntitiesControl {
+    .valuesContainer {
+        position: relative;
+        height: 100%;
+        flex: 1;
+
+        &.notEmpty {
+            margin-top: 10px;
+        }
+
+        .infoWrapper {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .infoLabel {
+            text-align: center;
+            color: @color__warning-txt;
+            user-select: none;
+
+            > p {
+                margin: 3px 0;
+            }
+        }
+
+        .chip {
+            max-width: 95%;
+        }
+    }
+}

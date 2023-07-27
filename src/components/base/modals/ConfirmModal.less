@@ -1,0 +1,120 @@
+@import "../../../assets/styles/colors.less";
+@import "../../../assets/styles/media.less";
+
+.ConfirmModal {
+    width: 535px;
+    margin: 0 auto;
+    max-height: 323px;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: width 0.3s ease-in-out;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    background-color: @color__white;
+    border-radius: 2px;
+    overflow: hidden;
+
+    @media (max-width: @max-width__650) {
+        width: 400px;
+    }
+
+    @media (max-width: @max-width__400) {
+        width: 300px;
+    }
+
+    .container {
+        height: 100%;
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        margin-top: 93px;
+        font-size: 22px;
+        line-height: 36px;
+        font-weight: 700;
+        color: rgba(30, 30, 30, 0.7);
+        user-select: none;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        font-size: 14px;
+        font-weight: 400;
+        color: #626262;
+        user-select: none;
+    }
+
+    .buttonsContainer {
+        padding: 0 40px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: @max-width__mobile), (max-height: @max-width__400) {
+            padding: 0;
+        }
+    }
+
+    .buttonCancel {
+        border: 1px solid var(--primary_border_color);
+        color: var(--primary_text_color);
+        background-color: var(--primary_background_color);
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                box-shadow: 0 2px 9px var(--primary_border_color);
+            }
+        }
+    }
+
+    .buttonWrapper {
+        & > button {
+            @media (max-width: @max-width__650) {
+                width: 135px;
+            }
+        }
+
+        &:first-child {
+            margin-right: 10px;
+        }
+
+        &:last-child {
+            margin-left: 10px;
+        }
+
+        @media (max-width: @max-width__mobile), (max-height: @max-width__400) {
+            width: calc(50% - 10px);
+
+            & > button {
+                width: 100%;
+            }
+        }
+    }
+
+    .form {
+        margin-top: auto;
+        margin-bottom: 30px;
+    }
+
+    &.dark {
+        background-color: var(--primary_background_color);
+
+        .title,
+        .text {
+            color: var(--primary_text_color);
+        }
+    }
+}

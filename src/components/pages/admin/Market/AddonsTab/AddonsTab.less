@@ -1,0 +1,89 @@
+@import "../../../../../assets/styles/media.less";
+@import "../../../../../assets/styles/scales.less";
+
+@height__header: 44px;
+@margin-bottom__header: 20px;
+
+.AddonsTab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: @height__header;
+        margin-bottom: @margin-bottom__header;
+        padding-right: 10px;
+        user-select: none;
+    }
+
+    .tableWrapper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .searchWrapper {
+        height: 100%;
+        width: 200px;
+
+        input {
+            border-radius: 4px;
+        }
+    }
+
+    .sortButtonWrapper {
+        margin-left: 20px;
+    }
+
+    .searchIcon {
+        background: transparent;
+    }
+
+    .searchInput {
+        font-weight: 300;
+    }
+}
+
+@media (max-width: @max-width__650) {
+    @height__header--mobile: @height__header + 10px;
+    @margin-bottom__header: 10px;
+
+    .MarketPage {
+        .header {
+            flex-wrap: wrap;
+            align-items: center;
+            height: auto;
+            width: 100%;
+            margin-bottom: @margin-bottom__header;
+        }
+
+        .title {
+            flex: 1 0;
+            font-size: 28px;
+        }
+
+        .sortButtonWrapper {
+            margin-left: 8px;
+        }
+
+        .searchWrapper {
+            height: 44px;
+            width: calc(100% - 56px - 9px);
+        }
+
+        .button {
+            width: 150px;
+            margin: 0;
+        }
+    }
+}

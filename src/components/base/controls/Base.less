@@ -1,0 +1,85 @@
+@import "../../../assets/styles/colors.less";
+@import "../../../assets/styles/media.less";
+
+.BaseControl {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    font-weight: 700 !important;
+    cursor: default !important;
+
+    .formWrapper {
+        width: 100%;
+    }
+
+    .dataWrapper {
+        display: inline-flex !important;
+        width: 100%;
+        align-items: center;
+
+        &.disabled {
+            * {
+                cursor: default;
+            }
+        }
+
+        &.floatRight {
+            justify-content: flex-end;
+        }
+    }
+
+    .valueWrapper {
+        padding: 1px 4px;
+        font-weight: 700;
+        max-width: 100%;
+        cursor: pointer;
+
+        &.withUnit {
+            max-width: 65%;
+            margin-right: 2%;
+        }
+    }
+
+    .unitWrapper {
+        max-width: 35%;
+        cursor: pointer;
+    }
+
+    &.settable {
+        @media @hover__not-touch {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .valueWrapper {
+            border-bottom: 1px dashed var(--editable-control_border-color);
+            transition: border-color 0.3s ease-in-out;
+
+            @media @hover__not-touch {
+                &:hover {
+                    border-color: var(--editable-control_border-color--hover);
+                }
+            }
+        }
+    }
+}
+
+.BaseControl.setName {
+    .valueWrapper {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.BaseControl.InputWidget {
+    .unitWrapper {
+        font-weight: 500;
+    }
+
+    .valueWrapper {
+        font-weight: 300 !important;
+    }
+}

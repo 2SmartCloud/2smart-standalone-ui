@@ -1,0 +1,27 @@
+.CriticalValue {
+    width: auto;
+    user-select: none;
+
+    .valueWrapper {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &.breakValue {
+        .valueWrapper {
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+    }
+}
+
+.tooltip {
+    margin-top: 5px !important;
+    word-break: break-all;
+    user-select: none;
+
+    &.hide {
+        display: none;
+    }
+}

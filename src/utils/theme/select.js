@@ -1,0 +1,57 @@
+const BORDER_COLOR = '#b3b3b3';
+const BORDER_COLOR_HOVER = '#787878';
+
+export const themes = {
+    LIGHT : {
+        '--border_color_select'                      : BORDER_COLOR,
+        '--border_color_hover_select'                : BORDER_COLOR_HOVER,
+        '--border_color_active_select'               : BORDER_COLOR,
+        '--background_color_menu'                    : '#FFF',
+        '--background_color_option_select'           : '#FFF',
+        '--background_color_option_select--hover'    : '#CCF3F0',
+        '--background_color_control'                 : '#FFF',
+        '--background_scroll_track'                  : '#F0F0F0',
+        '--box_shadow_color_select'                  : '#bcbcbc',
+        '--box_shadow_search'                        : ' 0 0 4px 2px rgba(230,230,230,0.4)',
+        '--background_color_option_search--focused'  : 'rgba(4, 186, 172, 0.101328)',
+        '--background_color_option_search--selected' : '#E5EDEE',
+        '--border_color_search'                      : '#b8b6b6',
+        '--border_color_search_menu'                 : '#b8b6b6',
+        '--mini-select_menu_background'              : '#FFF',
+        '--mini-select_text_color'                   : '#727272',
+        '--mini-select_option_background'            : '#FFF',
+        '--mini-select_option_border'                : '#D4DADF',
+        '--mini-select_color_option_border'          : '#D4DADF',
+        '--mini-select_search_background'            : '#FFF',
+        '--mini-select_search_border'                : '#EDEDED',
+        '--mini-select_search_box-shadow'            : 'rgba(0, 0, 0, 0.16)',
+        '--mini-select_search_placeholder'           : '#CACACA',
+        '--color-backup-option-time'                 : '#999'
+    },
+    DARK : {
+        '--border_color_select'                      : '#787878',
+        '--border_color_hover_select'                : '#04C0B2',
+        '--border_color_active_select'               : '#04C0B2',
+        '--background_color_menu'                    : '#2F333D',
+        '--background_color_option_select'           : '#2F333D',
+        '--background_color_option_select--hover'    : '#007a71',
+        '--background_color_control'                 : '#1D212A',
+        '--background_scroll_track'                  : '#1D212A',
+        '--box_shadow_color_select'                  : '#016e66',
+        '--box_shadow_search'                        : ' 0 0 4px 2px rgba(0,0,0,0.4)',
+        '--background_color_option_search--focused'  : '#2C2E36',
+        '--background_color_option_search--selected' : '#262931',
+        '--border_color_search'                      : '#04C0B2',
+        '--border_color_search_menu'                 : '#1D212A',
+        '--mini-select_menu_background'              : '#1D212A',
+        '--mini-select_text_color'                   : '#E6E7EB',
+        '--mini-select_option_background'            : '#2F333D',
+        '--mini-select_option_border'                : '#78797E',
+        '--mini-select_color_option_border'          : '#78797E',
+        '--mini-select_search_background'            : '#1D212A',
+        '--mini-select_search_border'                : '#767980',
+        '--mini-select_search_box-shadow'            : 'rgba(0, 0, 0, 0.16)',
+        '--mini-select_search_placeholder'           : '#818286',
+        '--color-backup-option-time'                 : '#afaeae'
+    }
+};

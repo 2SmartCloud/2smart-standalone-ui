@@ -1,0 +1,134 @@
+.SignalLevel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--primary_text_color);
+
+    .valueWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        max-width: 90px;
+        width: 57%;
+    }
+
+    .signalsWrapper {
+        height: 50%;
+        max-height: 64px;
+        width: 30%;
+        max-width: 68px;
+
+        .iconWrapper {
+            display: none;
+
+            .icon {
+                color: #F00;
+                margin-right: -6px;
+                width: 45%;
+                height: 45%;
+            }
+        }
+    }
+
+    .signalLevels {
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        margin-left: 5px;
+        height: 50%;
+        max-height: 64px;
+        width: 30%;
+        max-width: 68px;
+    }
+
+    .value {
+        max-width: 42px;
+    }
+
+    .level {
+        width: 8px;
+        height: 8px;
+        margin-right: 2px;
+        background: rgba(#2EB4AB, 0.5);
+
+        &.filled {
+            background: #2EB4AB;
+        }
+    }
+
+    .level:first-child {
+        height: 25%;
+        width: 25%;
+    }
+
+    .level:nth-child(2) {
+        height: 50%;
+        width: 25%;
+    }
+
+    .level:nth-child(3) {
+        height: 75%;
+        width: 25%;
+    }
+
+    .level:nth-child(4) {
+        height: 100%;
+        width: 25%;
+    }
+
+    .unit {
+        max-width: 50%;
+        font-size: 23px;
+    }
+
+    &.invalid {
+        .value {
+            display: none;
+        }
+
+        .level {
+            background: #E5E5E5;
+        }
+
+        .signalsWrapper {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            max-height: 100%;
+
+            .iconWrapper {
+                position: absolute;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-left: 5px;
+                height: 50%;
+                max-height: 64px;
+                width: 30%;
+                max-width: 68px;
+
+                .icon {
+                    color: #F00;
+                    margin-right: -6px;
+                    width: 45%;
+                    height: 45%;
+                }
+            }
+        }
+    }
+}
+
+.tooltip {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}

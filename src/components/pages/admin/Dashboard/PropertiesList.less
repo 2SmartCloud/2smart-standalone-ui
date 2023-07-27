@@ -1,0 +1,40 @@
+@import './../../../../assets/styles/media.less';
+
+.PropertiesList {
+    height: 100%;
+    width: 100%;
+    user-select: none;
+    overflow: auto;
+
+    &.isDisable {
+        opacity: 0.6;
+
+        * {
+            pointer-events: none;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: var(--primary_background_color) !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgba(4, 186, 172, 0.301328) !important;
+    }
+
+    /* REFACTOR: export this as mixin */
+
+    .tableWrapper {
+        padding: 0 40px;
+
+        @media (max-width: @max-width__mobile) {
+            padding: 0 20px;
+        }
+    }
+}

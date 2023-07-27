@@ -1,0 +1,79 @@
+@import "../../assets/styles/media.less";
+
+.DocumentationPage {
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    background-color: var(--primary_page_background_color);
+    color: var(--primary_text_color);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .container {
+        max-width: 1000px;
+        padding: 50px 30px 30px;
+        margin: 0 auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0.5em;
+        font-weight: 500;
+        line-height: 1.2;
+        border-bottom: 1px solid var(--primary_border_color);
+        padding-bottom: 0.5em;
+    }
+
+    p,
+    ul {
+        margin: 0 0 1em;
+    }
+
+    a {
+        color: var(--primary_text_color);
+        border-bottom: 1px dashed var(--editable-control_border-color);
+        transition: border-color 0.3s ease-in-out;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                border-bottom-color: var(--editable-control_border-color--hover);
+            }
+        }
+    }
+
+    code {
+        font-family: 'Ubuntu Mono', monospace;
+        font-weight: 300;
+        color: var(--highlight_keyword);
+    }
+
+    pre {
+        border: 1px solid var(--primary_border_color);
+        border-radius: 2px;
+        background-color: var(--secondary_background_color);
+        padding: 8px 12px;
+        margin-bottom: 1em;
+        overflow-x: auto;
+
+        code {
+            color: inherit;
+        }
+
+        &::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+    }
+}
+
+@media (max-width: @max-width__mobile) {
+    .DocumentationPage {
+        .container {
+            padding: 20px 15px 5px;
+        }
+    }
+}

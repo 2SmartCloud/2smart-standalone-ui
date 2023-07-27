@@ -1,0 +1,40 @@
+@import '../../assets/styles/colors.less';
+@import '../../assets/styles/media.less';
+
+.PushButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 30px;
+    padding: 0;
+    outline: none;
+    color: #FFF;
+    border: none;
+    border-radius: 2px;
+    background: #04BAAC;
+    margin: 0 auto;
+    transition: box-shadow 0.3s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            box-shadow: 0 2px 9px #04BAAC;
+        }
+    }
+
+    &:active {
+        background: #B5DDD9;
+        box-shadow: 0 2px 1px rgba(64, 126, 120, 0.3);
+    }
+
+    &:disabled {
+        pointer-events: none;
+        cursor: default;
+        background: @color__btn-disabled;
+        box-shadow: none !important;
+    }
+}

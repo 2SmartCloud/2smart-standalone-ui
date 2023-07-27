@@ -1,0 +1,66 @@
+@import "../../assets/styles/colors.less";
+
+.GenericSortButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    min-width: 56px;
+    height: 100%;
+    min-height: 38px;
+    border-radius: 4px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    line-height: 20px;
+    border: 1px solid var(--primary_background_color);
+    color: var(--color_icon);
+    background-color: var(--primary_background_color);
+    user-select: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    &:hover {
+        border-color: var(--border_color_search);
+        color: var(--color_icon--hover);
+    }
+
+    .sortIcon {
+        width: 30px;
+        height: 20px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        .line {
+            display: block;
+            height: 3px;
+            background-color: var(--color_icon);
+            transition: width 0.3s ease-out;
+
+            &:nth-child(1) {
+                width: 100%;
+            }
+
+            &:nth-child(2) {
+                width: 65%;
+            }
+
+            &:nth-child(3) {
+                width: 30%;
+            }
+        }
+
+        &.reversed {
+            .line {
+                &:nth-child(1) {
+                    width: 30%;
+                }
+
+                &:nth-child(3) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

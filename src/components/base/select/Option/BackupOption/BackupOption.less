@@ -1,0 +1,33 @@
+@import "../../../../../assets/styles/media.less";
+@import "../../../../../assets/styles/colors.less";
+
+@width__scrollbar: 10px;
+@width__type: 50px;
+@height__type: @width__type;
+@margin-right__type: 50px;
+@width__action-button: 150px;
+@margin-right__title: 20px;
+
+.BackupOption {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    margin: 10px 15px 10px 15px;
+
+    .title {
+        margin-right: @margin-right__title;
+        font-size: 13px;
+        color: var(--primary_text_color);
+        min-width: 0;
+    }
+
+    .time {
+        margin-left: auto;
+        font-size: 13px;
+        color: var(--color-backup-option-time);
+        user-select: none;
+        flex-shrink: 0;
+    }
+}

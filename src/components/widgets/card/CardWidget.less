@@ -1,0 +1,65 @@
+@import "../../../assets/styles/media.less";
+
+.CardWidget {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .propertiesList {
+        overflow-y: auto;
+        padding-right: 5px;
+        width: 100%;
+        height: 100%;
+
+        .propertyValue {
+            min-width: 125px;
+        }
+
+        &.disabled {
+            pointer-events: none !important;
+            opacity: 0.6;
+        }
+
+        &.editMode {
+            .propertyValue {
+                pointer-events: none !important;
+                opacity: 0.6;
+            }
+        }
+    }
+
+    .property {
+        min-height: 40px;
+        width: 100%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &MainData {
+            min-height: 40px;
+            grid-gap: 5px;
+            grid-template-columns: minmax(auto, 1fr) fit-content(50%);
+
+            > * {
+                min-width: 0;
+            }
+
+            * {
+                font-weight: 300;
+            }
+        }
+    }
+
+    @media (max-width: @max-width__mobile) {
+        .property {
+            &MainData {
+                min-height: 40px;
+                grid-gap: 5px;
+            }
+        }
+    }
+}

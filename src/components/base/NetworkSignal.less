@@ -1,0 +1,25 @@
+@import "../../assets/styles/colors.less";
+@import "../../assets/styles/scales.less";
+
+.NetworkSignal {
+    color: @color__telemetry-signal;
+
+    & > svg {
+        max-height: @height__indicator;
+    }
+
+    .invalidSignalValue {
+        color: #E8E8E8;
+    }
+
+    &.isDisable {
+        color: @color__background-disable;
+        pointer-events: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

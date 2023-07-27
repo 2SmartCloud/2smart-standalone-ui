@@ -1,0 +1,79 @@
+@import './../../../../../assets/styles/colors.less';
+@import './../../../../../assets/styles/media.less';
+@import './../../../../../assets/styles/scales.less';
+
+.BulbWidgetGeneralTab {
+    width: 100%;
+    text-align: center;
+    max-width: 300px;
+    margin: auto;
+
+    .container {
+        margin: auto;
+        user-select: none;
+        margin-bottom: 20px !important;
+        @media (max-width: @max-width__500) {
+            width: 90%;
+        }
+    }
+
+    .label {
+        margin-bottom: 10px;
+        color: var(--primary_text_color);
+        user-select: none;
+
+        &.required {
+            &::after {
+                content: '*';
+            }
+        }
+    }
+
+    .input {
+        width: 100%;
+        height: 36px;
+        cursor: pointer;
+        font-size: 14px;
+        outline: none;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        font-weight: 300;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                border-color: #B3B3B3;
+            }
+        }
+    }
+
+    .tabsWrapper {
+        margin-bottom: 10px;
+    }
+
+    .tabsContent {
+        height: auto;
+        overflow: visible;
+    }
+
+    .tabWrapper {
+        margin-right: 15px !important;
+
+        > span {
+            font-size: 14px;
+            font-weight: 300;
+        }
+    }
+
+    @media (max-height: @max-height__mobile) {
+        .container {
+            &.withMargin {
+                margin-bottom: 10px !important;
+            }
+        }
+    }
+}
+
+.tooltip {
+    max-width: 200px;
+    word-break: break-all;
+}

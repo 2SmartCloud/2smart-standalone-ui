@@ -1,0 +1,58 @@
+
+@import '../../assets/styles/media.less';
+@import '../../assets/styles/colors.less';
+@import '../../assets/styles/scales.less';
+
+.paper {
+    overflow-x: unset !important;
+    overflow-y: unset !important;
+    max-height: 355px !important;
+    height: 90%;
+    border-radius: 4px;
+    box-shadow: none !important;
+
+    &_discovery_devices,
+    &_notifications {
+        background-color: var(--primary_background_color) !important;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) !important;
+        position: fixed !important;
+        border-radius: 2px;
+        margin: 0 !important;
+        top: calc(@height__header + 10px);
+        right: 10px;
+
+        @media (max-width: 650px) {
+            top: 80px;
+        }
+
+        @media (max-width: @max-width__mobile) {
+            height: auto;
+            top: 70px;
+            left: 10px;
+            right: 10px;
+            width: calc(100vw - 20px);
+        }
+
+        @media (max-width: @max-width__320) {
+            top: 60px;
+        }
+    }
+
+    &_notifications {
+        position: fixed !important;
+        right: 180px;
+
+        @media (max-width: @max-width__mobile) {
+            right: 0;
+        }
+    }
+}
+
+.backdrop_discovery_devices,
+.backdrop_notifications {
+    background-color: transparent !important;
+}
+
+.hiddenDialog {
+    display: none !important;
+}

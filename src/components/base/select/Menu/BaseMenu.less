@@ -1,0 +1,15 @@
+.BaseMenu {
+    background: var(--tertiary_background_color) !important;
+    z-index: 10 !important;
+
+    &.floatRight {
+        right: 0;
+        left: unset;
+    }
+
+    &.openTop {
+        margin-top: 0;
+        top: 0;
+        transform: translateY(calc(-100% - 8px));
+    }
+}

@@ -1,0 +1,110 @@
+@import "../../../../assets/styles/media.less";
+@import "../../../../assets/styles/scales.less";
+
+@height__header: 44px;
+@margin-bottom__header: 20px;
+
+.NotificationChannelsPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    .container {
+        width: 100%;
+        height: 100%;
+        max-width: 1190px;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: @height__header;
+        margin-bottom: @margin-bottom__header;
+        padding-right: 10px;
+    }
+
+    .searchWrapper {
+        height: 100%;
+        width: 200px;
+
+        input {
+            border-radius: 4px;
+        }
+    }
+
+    .sortButtonWrapper {
+        margin-left: 20px;
+    }
+
+    .searchIcon {
+        background: transparent;
+    }
+
+    .searchInput {
+        font-weight: 300;
+    }
+
+    .createServiceButtonWrapper {
+        height: 44px;
+        margin-left: auto;
+    }
+
+    .tableWrapper {
+        height: calc(100% - @height__header - @margin-bottom__header);
+    }
+}
+
+@media (max-width: @max-width__mobile) {
+    .NotificationChannelsPage {
+        .tableWrapper {
+            height: calc(100% - 110px);
+        }
+    }
+}
+
+@media (max-width: @max-width__650) {
+    @height__header--mobile: 38px;
+    @margin-bottom__header: 10px;
+
+    .NotificationChannelsPage {
+        .header {
+            flex-wrap: wrap;
+            align-items: flex-start;
+            height: auto;
+            width: 100%;
+            margin-bottom: @margin-bottom__header;
+        }
+
+        .createServiceButtonWrapper,
+        .title {
+            flex: 1 0;
+        }
+
+        .title {
+            font-size: 28px;
+        }
+
+        .createServiceButtonWrapper {
+            order: -1;
+            margin-bottom: 10px;
+        }
+
+        .sortButtonWrapper {
+            margin-left: 8px;
+        }
+
+        .searchWrapper {
+            height: 44px;
+            width: calc(100% - 56px - 9px);
+        }
+
+        .button {
+            width: 150px;
+            margin: 0;
+        }
+    }
+}

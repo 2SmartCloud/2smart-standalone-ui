@@ -1,0 +1,71 @@
+@import "../../../../assets/styles/media.less";
+
+.Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border_color_select);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    background-color: var(--background_color_control);
+
+    .placeholder {
+        width: calc(100% - 30px);
+        padding-left: 11px;
+        margin-left: auto;
+        color: var(--primary_text_color);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: left;
+        user-select: none;
+
+        &.secondary {
+            color: var(--placeholder_text_color);
+        }
+    }
+
+    .defaultValueWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% - 30px);
+        height: 100%;
+    }
+
+    .iconWrapper {
+        flex-shrink: 0;
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+    }
+
+    &.withError {
+        border-color: red;
+    }
+
+    @media @hover__not-touch {
+        &:hover {
+            border-color: var(--border_color_hover_select);
+            cursor: pointer;
+        }
+    }
+}
+
+.Container.disabled {
+    pointer-events: none;
+
+    @media @hover__not-touch {
+        &:hover {
+            border-color: var(--border_color_select);
+            cursor: inherit;
+
+            .icon {
+                cursor: inherit;
+            }
+        }
+    }
+}

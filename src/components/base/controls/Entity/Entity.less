@@ -1,0 +1,170 @@
+@import './../../../../assets/styles/colors.less';
+@import './../../../../assets/styles/scales.less';
+@import './../../../../assets/styles/media.less';
+
+/* stylelint-disable no-descending-specificity */
+.EntityControl {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+    position: relative;
+
+    @media @hover__not-touch {
+        &:hover {
+            cursor: pointer;
+
+            input {
+                border-color: var(--border_color_hover_select) !important;
+            }
+
+            .buttonWrapper {
+                box-shadow: 0 2px 9px @color__aqua;
+            }
+        }
+    }
+
+    .inputWrapper {
+        position: relative;
+        width: calc(100% - 40px);
+        height: 100%;
+        margin-right: 13px;
+
+        &.withClearButton {
+            .input {
+                padding-right: 30px;
+            }
+        }
+
+        .clearButton {
+            position: absolute;
+            top: 7.5px;
+            right: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            color: var(--color_icon);
+
+            > svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            @media @hover__not-touch {
+                &:hover {
+                    color: var(--color_icon--hover);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .input {
+        width: 100%;
+        height: 100%;
+        padding: 0.5px 10px;
+        color: var(--primary_text_color);
+        background: var(--input_background_color);
+        border-radius: @border-radius__input;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 16px;
+        border: 1px solid var(--border_color_select);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        outline: none !important;
+        box-shadow: none !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer !important;
+        transition: border-color 0.3s;
+
+        &::placeholder {
+            color: var(--placeholder_text_color);
+            font-weight: 300;
+            transform: translateY(-0.5px);
+            user-select: none;
+
+            @supports @ios-devices {
+                transform: translateY(1px) translateX(1px);
+            }
+        }
+
+        &:focus {
+            border-color: var(--border_color_active_select);
+            box-shadow: 0 0 2px 1px var(--box_shadow_color_select) !important;
+        }
+
+        &.deleted {
+            background: var(--input_disabled_background);
+            color: var(--secondary_text_color);
+        }
+    }
+
+    .buttonWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 5px;
+        background: @color__aqua;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        > svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.EntityControl.dark {
+    .input {
+        background: var(--input_background_color);
+        color: var(--primary_text_color);
+        border-color: var(--border_color_select);
+        -webkit-appearance: none;
+    }
+
+    .buttonWrapper {
+        background: transparent;
+
+        @media @hover__not-touch {
+            &:hover + .input {
+                border-color: var(--border_color_hover_select);
+            }
+
+            &:hover {
+                background: @color__aqua;
+                border-color: @color__aqua;
+
+                svg {
+                    path {
+                        fill: white;
+                        transition: fill 0.3s ease;
+                    }
+                }
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.EntityControl.invalid {
+    .input {
+        border-color: red !important;
+
+        &:focus {
+            border-color: red !important;
+            box-shadow: none !important;
+        }
+    }
+}

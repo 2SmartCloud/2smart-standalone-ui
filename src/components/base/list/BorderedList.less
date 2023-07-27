@@ -1,0 +1,48 @@
+@import '../../../assets/styles/media.less';
+@import '../../../assets/styles/mixins.less';
+@import '../../../assets/styles/colors.less';
+
+.BorderedList {
+    flex-grow: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: calc(100% + 8px);
+    height: calc(100% - 70px);
+    padding-right: 8px;
+    margin-top: 15px;
+    margin-bottom: 18px;
+
+    .option {
+        &:first-child {
+            margin-top: 0;
+        }
+
+        /* stylelint-disable declaration-colon-space-after */
+        /* stylelint-disable property-no-unknown */
+        /* stylelint-disable declaration-empty-line-before */
+        &:extend(.dropdown_option);
+
+        cursor: default !important;
+        background: var(--tertiary_background_color) !important;
+
+        .label {
+            width: 100%;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            user-select: none;
+        }
+    }
+
+    .infoLabel {
+        text-align: center;
+        color: @color__warning-txt;
+        margin: 50px 0 0;
+        user-select: none;
+    }
+
+    @media (max-height: 320px) {
+        .arrow {
+            display: none;
+        }
+    }
+}

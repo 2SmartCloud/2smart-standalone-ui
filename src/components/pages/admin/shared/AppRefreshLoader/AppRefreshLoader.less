@@ -1,0 +1,30 @@
+.AppRefreshLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    background-color: var(--secondary_background_color);
+    z-index: 9999;
+
+    .label {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+        color: var(--primary_text_color);
+        margin-bottom: 40px;
+    }
+
+    .loadingIndicator {
+        width: 50px;
+        height: 50px;
+        background: url('../../../../../assets/icons/loading.svg');
+    }
+}

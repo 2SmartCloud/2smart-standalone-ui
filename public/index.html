@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2Smart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="minimum-scale=1, maximum-scale=1.0, initial-scale=1, width=device-width, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no">
+    <link href="/static/fonts.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/spin.css">
+    <link rel="stylesheet" href="/static/normalize.css">
+    <link rel="icon" href="/static/favicon.png?v=1" type="image/png" sizes="32x32">
+    <link rel="icon" href="/static/favicon-128.png?v=1" type="image/png" sizes="128x128">
+</head>
+<body>
+    <div id="loader"></div>
+    <div id="root">
+        <div id='theme' width='100%' height='100%' background='white' />
+    </div>
+    <noscript>
+        <style>
+            html {
+                height: 100%;
+            }
+
+            body {
+                height: 100%;
+                margin: 0;
+                background-color: #F9FBFB;
+            }
+
+            .enabled-js-message {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 29px;
+            }
+        </style>
+        <div class="enabled-js-message">You need to enable JavaScript to run this app.</div>
+    </noscript>
+    <script>
+        const block = document.getElementById('theme');
+        const loader = document.getElementById('loader');
+        const pathname = document.location.pathname;
+        const savedTheme = localStorage.getItem('theme');
+        const layoutTheme = pathname.includes('admin') ? 
+            localStorage.getItem('adminTheme') :
+            localStorage.getItem('clientTheme');
+        const theme = layoutTheme || savedTheme;
+        block.style.width = '100%';
+        block.style.height = '100%';
+        if (theme === 'DARK') {
+            block.style.background = '#2F333D';
+            loader.style.background = '#2F333D';
+            loader.style.color = '#f0f0f0';
+        }
+    </script>
+    <script src="/static/initSpin.js"></script>
+    <script src="/static/config.js"></script>
+    <%= updateConfig %>
+    <%= buildFiles %>
+    <%= initBundle %>
+</body>
+</html>

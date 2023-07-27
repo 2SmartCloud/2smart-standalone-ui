@@ -1,0 +1,35 @@
+@import "../../../../../assets/styles/media.less";
+@import "../../../../../assets/styles/colors.less";
+
+.BaseOption {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 35px;
+    height: auto;
+    margin-bottom: 6px;
+    background-color: var(--mini-select_option_background);
+    border: 1px solid var(--mini-select_option_border);
+    border-radius: 4px;
+
+    &.selected {
+        border: 1px solid @color__aqua;
+    }
+
+    &.disabled {
+        background-color: var(--border_color_select);
+        pointer-events: none;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media @hover__not-touch {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

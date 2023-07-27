@@ -1,0 +1,59 @@
+@import "../../../../../../assets/styles/colors.less";
+@import "../../../../../../assets/styles/media.less";
+
+@height__input: 50px;
+@height__error-message: 16px;
+@line-height__label: 26px;
+@width__form-wrapper: 330px;
+@font-size__error-message: 12px;
+
+@margin-bottom__name : @height__error-message;
+
+.inputConatiner {
+    width: 100%;
+    padding-bottom: 5px;
+
+    .inputLabel {
+        font-size: 14px;
+        line-height: @line-height__label;
+    }
+
+    .inputWrapper {
+        height: 44px;
+    }
+
+    .errorMessage {
+        min-height: @height__error-message;
+        height: 100%;
+        color: @color__warning-txt-red;
+        font-size: @font-size__error-message;
+        user-select: none;
+
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
+}
+
+.submitButton {
+    margin: 21px auto 0 0;
+    width: 150px;
+}
+
+.createButton {
+    width: 150px;
+    margin-left: 0;
+}
+
+.createBackup {
+    pointer-events: none;
+}
+
+@media (max-width: @max-width__mobile) {
+    .submitButton,
+    .createButton,
+    .createBackupWrapper,
+    .createBackup {
+        width: 100%;
+    }
+}

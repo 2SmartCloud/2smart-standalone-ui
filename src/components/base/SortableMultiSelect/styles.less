@@ -1,0 +1,67 @@
+@import '../../../assets/styles/colors.less';
+@import '../../../assets/styles/media.less';
+@import '../../../assets/styles/mixins.less';
+@color__button-negative:rgba(222, 5, 5, 0.59);
+@color__dark: #F0F0F0;
+@input_padding: 10px;
+
+.MultiSelect {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+
+    .select {
+        height: 38px;
+        max-width: 420px;
+    }
+
+    .valuesContainer {
+        position: relative;
+        height: 100%;
+        flex: 1;
+
+        &.notEmpty {
+            margin-top: 10px;
+        }
+
+        .infoWrapper {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .infoLabel {
+            text-align: center;
+            color: @color__warning-txt;
+            user-select: none;
+
+            > p {
+                margin: 3px 0;
+            }
+        }
+    }
+}
+
+.chipWrapper {
+    margin: 0 0 6px 0;
+    cursor: pointer;
+
+    .chip {
+        display: flex;
+        margin: 0 !important;
+        max-width: 100%;
+        height: auto !important;
+        cursor: grab;
+    }
+
+    .chipLabel {
+        text-align: left;
+        text-overflow: unset;
+        white-space: normal;
+        word-break: break-word;
+        padding: 5px 12px !important;
+    }
+}

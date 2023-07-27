@@ -1,0 +1,102 @@
+@import "../../assets/styles/media.less";
+
+@margin-top__controls: 20px;
+@button_height: 45px;
+@button_height_tablet: 36px;
+@button_height_mobile: 32px;
+
+.Paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: @button_height;
+    flex-shrink: 0;
+    margin-top: @margin-top__controls;
+
+    @media (max-width: @max-width__tablet) {
+        height: @button_height_tablet;
+    }
+
+    @media (max-width: @max-width__mobile) {
+        height: @button_height_mobile;
+    }
+
+    .pageIndex,
+    .paginationButton {
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: @button_height;
+        height: @button_height;
+        padding: 0;
+        margin-left: 5px;
+        margin-right: 5px;
+        background: transparent;
+        color: #BAC0C4;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 800;
+
+        &.current {
+            background-color: #04BAAC;
+            color: #FFF;
+        }
+
+        &.button {
+            transition: background-color 0.5s, color 0.5s;
+
+            &:hover {
+                border: 2px solid #04BAAC;
+                cursor: pointer;
+            }
+        }
+
+        @media (max-width: @max-width__tablet) {
+            width: @button_height_tablet;
+            height: @button_height_tablet;
+        }
+
+        @media (max-width: @max-width__mobile) {
+            width: @button_height_mobile;
+            height: @button_height_mobile;
+            margin-left: 1px;
+            margin-right: 1px;
+        }
+
+        &.noneMobile {
+            @media (max-width: @max-width__mobile) {
+                display: none;
+            }
+        }
+    }
+
+    .paginationButton {
+        border: none;
+        transition: opacity 0.3s ease;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            border: 2px solid #04BAAC;
+            cursor: pointer;
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+            border: none !important;
+            opacity: 0.4;
+
+            > * {
+                pointer-events: none;
+            }
+        }
+    }
+
+    @media (max-width: @max-width__mobile), (max-height: @max-width__400) {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+}

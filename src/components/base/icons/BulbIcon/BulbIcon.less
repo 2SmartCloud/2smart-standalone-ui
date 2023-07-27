@@ -1,0 +1,49 @@
+.BulbIcon {
+    cursor: pointer;
+    position: relative;
+
+    &.disabled {
+        cursor: default;
+
+        .cross {
+            fill-opacity: 1;
+        }
+    }
+
+    &.dark {
+        .glass {
+            fill: #D6D6D6;
+        }
+
+        .spiral {
+            fill: #868686;
+        }
+    }
+
+    &.processing {
+        cursor: default;
+    }
+}
+
+.loaderWrapper {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 9px;
+    padding-right: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    color: rgb(255, 255, 255) !important;
+    z-index: 4;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.processSvg {
+    color: rgba(145, 145, 145, 0.815) !important;
+}

@@ -1,0 +1,45 @@
+@import "../../../../../../assets/styles/colors.less";
+@import "../../../../../../assets/styles/media.less";
+@import "../../../../../../assets/styles/scales.less";
+
+@height__button: 44px;
+
+.fieldRow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+
+    .fieldInputWrapper {
+        width: 100%;
+        max-width: 420px;
+
+        &:first-child {
+            margin-right: 17px;
+        }
+
+        input {
+            height: 100%;
+            text-align: center;
+            font-size: 36px;
+            font-weight: 300;
+        }
+    }
+
+    .switchModeWrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: auto 0;
+
+        .fieldButton {
+            width: 72px;
+            height: @height__button;
+
+            &.vertical {
+                width: 72px;
+                height: 24px !important;
+                margin-bottom: 1px;
+            }
+        }
+    }
+}

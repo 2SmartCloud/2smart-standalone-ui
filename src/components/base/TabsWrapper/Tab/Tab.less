@@ -1,0 +1,69 @@
+@import "../../../../assets/styles/media.less";
+@import "../../../../assets/styles/colors.less";
+
+.Tab {
+    height: 33px !important;
+    padding: 0 5px !important;
+    background: transparent !important;
+    text-transform: capitalize !important;
+    justify-content: flex-start !important;
+    min-height: unset !important;
+    min-width: unset !important;
+    margin-bottom: 8px !important;
+    margin-bottom: 0 !important;
+    margin-right: 20px !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: var(--tabs-text-color) !important;
+    opacity: 1 !important;
+    transition-property: opacity, color;
+
+    @media (max-width: @max-width__mobile) {
+        margin-right: 10px !important;
+        font-size: 12px !important;
+    }
+
+    &:last-of-type {
+        margin-right: 0 !important;
+    }
+
+    .iconWrapper {
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+
+        path {
+            fill: var(--color_icon);
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start !important;
+    }
+
+    &.selected {
+        color: var(--primary_text_color) !important;
+        font-weight: 500 !important;
+
+        .icon {
+            path {
+                fill: @color__aqua;
+            }
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            color: var(--primary_text_color) !important;
+
+            .icon {
+                path {
+                    fill: @color__aqua;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,109 @@
+@import "../../../../../assets/styles/colors.less";
+@import "../../../../../assets/styles/media.less";
+
+.SystemTab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 3px;
+    background: var(--primary_background_color);
+    color: var(--primary_text_color);
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.033);
+
+    .contentWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .lastUpdate {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 4px;
+    }
+
+    .typo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: left;
+
+        .bold {
+            font-weight: 500;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            color: var(--primary_text_color);
+            margin-bottom: 30px;
+            user-select: none;
+
+            .changelogIconWrapper {
+                display: flex;
+                margin-left: 7px;
+            }
+
+            .changelogIcon {
+                cursor: pointer;
+                transition: opacity 0.3s ease;
+
+                @media @hover__not-touch {
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+        .subTitle {
+            width: 100%;
+            color: #BEBEBE;
+            user-select: none;
+
+            .bold {
+                color: var(--primary_text_color);
+            }
+        }
+    }
+
+    .controlWrapper {
+        margin-top: 30px;
+
+        .button {
+            font-weight: 300;
+            margin-left: 0;
+        }
+
+        @media (max-width: @max-width__mobile) {
+            width: 100%;
+
+            .button {
+                width: 100%;
+            }
+        }
+    }
+
+    .restartBlock {
+        margin-top: auto;
+    }
+
+    @media (max-width: 850px) {
+        .contentWrapper {
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+        }
+    }
+}

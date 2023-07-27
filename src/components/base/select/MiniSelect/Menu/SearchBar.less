@@ -1,0 +1,21 @@
+.SearchBar {
+    width: 100%;
+    height: 40px;
+    padding-bottom: 7px;
+
+    .input {
+        color: var(--mini-select_text_color) !important;
+        background: var(--mini-select_search_background) !important;
+        border-color: var(--mini-select_search_border) !important;
+        height: 36px;
+
+        &:focus {
+            border-color: var(--border_color_active_select) !important;
+        }
+
+        &::placeholder {
+            font-weight: 300px;
+            color: var(--mini-select_search_placeholder);
+        }
+    }
+}

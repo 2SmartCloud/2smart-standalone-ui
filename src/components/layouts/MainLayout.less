@@ -1,0 +1,28 @@
+@import '../../assets/styles/colors.less';
+
+.MainLayout {
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary_background_color);
+}
+
+:global {
+    button::-moz-focus-inner {
+        border: 0;
+    }
+
+    ::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: var(--color_scroll_track);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: @color__ligth-spring-green;
+    }
+}

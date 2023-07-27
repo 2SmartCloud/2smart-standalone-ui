@@ -1,0 +1,48 @@
+.Sensor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 36px;
+
+    &:not(:last-child) {
+        margin-bottom: 2px;
+    }
+
+    .booleanControlWrapper {
+        width: 50%;
+        height: 100%;
+        padding-right: 15px;
+    }
+
+    .enumWrapper {
+        width: 50%;
+        margin-right: 15px;
+    }
+
+    .baseWrapper {
+        width: 50%;
+        margin-right: 15px;
+    }
+
+    .colorWrapper {
+        margin-right: 15px;
+    }
+
+    .name {
+        letter-spacing: 0.4px;
+        padding-right: 10px;
+    }
+
+    .value {
+        text-align: right;
+        font-weight: 700;
+        padding-right: 15px;
+    }
+}
+
+@media (pointer: coarse) {
+    .Sensor {
+        height: 40px;
+    }
+}

@@ -1,0 +1,103 @@
+@import "../../assets/styles/colors.less";
+@import "../../assets/styles/media.less";
+@background-color__page: #F0F9F8;
+
+.CommandPage {
+    height: 100%;
+    width: 100%;
+    padding: 50px 30px 0;
+    background-color: var(--primary_page_background_color);
+    color: var(--primary_text_color);
+    overflow: auto;
+
+    .body {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .title {
+        width: fit-content;
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-weight: 500;
+        user-select: none;
+    }
+
+    .subtitle {
+        font-weight: 500;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        user-select: none;
+    }
+
+    .copyField {
+        margin-bottom: 10px;
+    }
+
+    .curlTip {
+        font-size: 12px;
+        font-style: italic;
+        margin-bottom: 20px;
+        user-select: none;
+    }
+
+    .tipButton {
+        display: inline-flex;
+        align-items: center;
+        height: 25px;
+        line-height: 15px;
+        padding-left: 6px;
+        padding-right: 6px;
+        margin: 0 20px 10px 0;
+        background-color: var(--group_secondary_background_color);
+        border-radius: 4px;
+        font-size: 14px;
+        outline: none;
+        box-sizing: border-box;
+        text-decoration: none;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                opacity: 0.85;
+            }
+        }
+    }
+
+    .tipBlock,
+    .tipBlock {
+        margin-bottom: 20px;
+
+        .tipItem {
+            margin-bottom: 10px;
+        }
+
+        .tipTitle {
+            font-style: normal;
+            margin-bottom: 10px;
+            user-select: none;
+        }
+
+        .tipValue {
+            font-style: normal;
+            font-weight: 300;
+        }
+    }
+
+    @media (max-width: @max-width__mobile) {
+        .title {
+            font-size: 16px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+        }
+    }
+}
+
+.CommandPage.LIGHT {
+    .tipButton {
+        background: rgb(195, 234, 230);
+    }
+}

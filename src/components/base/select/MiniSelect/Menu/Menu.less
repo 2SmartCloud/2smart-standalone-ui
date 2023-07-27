@@ -1,0 +1,73 @@
+@import "../../../../../assets/styles/colors.less";
+@import "../../../../../assets/styles/media.less";
+
+.Menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: var(--mini-select_menu_background);
+    padding: 0 19px 17px;
+
+    .checkBoxWrapper {
+        margin: 7px 0 4px;
+    }
+
+    .closeButton {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 0;
+        color: var(--color_icon);
+
+        path {
+            transition: color 0.3s;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background-color: transparent;
+                color: var(--color_icon--hover);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .title {
+        width: 100%;
+        color: var(--primary_text_color);
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .searchWrapper {
+        width: 100%;
+        margin-bottom: 7px;
+    }
+
+    .content {
+        display: flex;
+        margin-right: -9px;
+        height: 100%;
+        flex-grow: 1;
+        overflow-y: auto;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--mini-select_text_color);
+    }
+
+    @media (max-height: @max-width__400) {
+        .searchWrapper {
+            margin-bottom: 7px;
+        }
+    }
+}

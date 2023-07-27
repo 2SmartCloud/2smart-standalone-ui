@@ -1,0 +1,110 @@
+@import "./../../assets/styles/colors.less";
+@import "./../../assets/styles/media.less";
+
+.DeleteWarning {
+    width: 535px;
+    margin: 0 auto;
+    max-height: 323px;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: width 0.3s ease-in-out;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    background-color: var(--primary_background_color);
+    border-radius: 2px;
+
+    @media (max-width: @max-width__650) {
+        width: 400px;
+    }
+
+    @media (max-width: @max-width__400) {
+        width: 300px;
+    }
+
+    .container {
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        margin-top: 93px;
+        font-size: 22px;
+        line-height: 36px;
+        font-weight: 700;
+        color: var(--primary_text_color);
+        padding: 0 7px;
+        user-select: none;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--secondary_text_color);
+        user-select: none;
+    }
+
+    .buttonsContainer {
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px;
+
+        @media (max-width: @max-width__mobile), (max-height: @max-width__400) {
+            padding: 0 20px;
+            align-items: stretch;
+        }
+    }
+
+    .buttonWrapper {
+        & > button {
+            @media (max-width: @max-width__650) {
+                width: 135px;
+            }
+
+            @media (max-width: @max-width__400) {
+                width: 115px;
+                height: 100%;
+            }
+        }
+
+        &:first-child {
+            margin-right: 5px;
+        }
+
+        &:last-child {
+            margin-left: 5px;
+
+            & > button {
+                border: 1px solid var(--primary_border_color);
+                color: var(--primary_text_color);
+                background-color: var(--primary_background_color);
+
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        box-shadow: 0 2px 9px var(--primary_border_color);
+                    }
+                }
+            }
+        }
+    }
+
+    .form {
+        margin-top: auto;
+        margin-bottom: 30px;
+    }
+}

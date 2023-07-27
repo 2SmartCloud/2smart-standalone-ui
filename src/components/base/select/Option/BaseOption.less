@@ -1,0 +1,51 @@
+@import './../../../../assets/styles/colors.less';
+@import './../../../../assets/styles/scales.less';
+
+.BaseOption {
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid var(--border_color_select);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: var(--tertiary_background_color) !important;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    outline: none;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:active {
+        background-color: var(--background_color_option_select--hover) !important;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background-color: var(--background_color_option_select--hover) !important;
+        }
+    }
+
+    &.focused {
+        background-color: var(--background_color_option_select--hover) !important;
+    }
+
+    & > div {
+        cursor: pointer;
+        color: @color__black;
+        word-break: break-word;
+        margin: 10px 15px 10px 15px;
+    }
+
+    &.selected {
+        border: 2px solid @color__aqua;
+    }
+
+    &.disabled {
+        background-color: var(--border_color_select) !important;
+        pointer-events: none;
+    }
+}

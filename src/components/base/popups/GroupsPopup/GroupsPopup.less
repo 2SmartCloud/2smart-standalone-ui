@@ -1,0 +1,73 @@
+@import '../../../../assets/styles/media.less';
+@import '../../../../assets/styles/colors.less';
+@main_padding: 18px;
+
+.GroupsPopup {
+    width: 370px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: var(--primary_background_color);
+
+    .header {
+        text-align: center;
+        position: relative;
+        margin: @main_padding auto 12px;
+        color: var(--primary_text_color);
+        user-select: none;
+        font-weight: 500;
+    }
+
+    .closeIcon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 0;
+        color: var(--color_icon);
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                background-color: transparent;
+                color: var(--color_icon--hover);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .tabsContent {
+        padding: 3px @main_padding 0;
+        overflow: hidden;
+    }
+
+    .tabsWrapper {
+        margin: 0  @main_padding;
+        padding: 0;
+    }
+
+    .tabsContainer {
+        overflow: hidden;
+    }
+
+    .tab {
+        margin-right: 20px !important;
+    }
+
+    @media (max-width: @max-width__mobile) {
+        @main_padding_mobile : 10px;
+
+        width: 300px;
+
+        .header {
+            margin: @main_padding_mobile  @main_padding_mobile;
+        }
+
+        .tabsContent {
+            padding: 3px @main_padding_mobile 0;
+        }
+
+        .tabsWrapper {
+            margin: 0  @main_padding_mobile;
+        }
+    }
+}

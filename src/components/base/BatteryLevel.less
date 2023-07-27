@@ -1,0 +1,29 @@
+@import "../../assets/styles/colors.less";
+@import "../../assets/styles/scales.less";
+
+.BatteryLevel {
+    color: @color__telemetry-battery;
+
+    & > svg {
+        max-height: @height__indicator;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &.alert {
+        color: var(--color_icon__warning);
+    }
+
+    &.isDisable {
+        color: @color__background-disable;
+        pointer-events: none;
+    }
+
+    .invalidSignalValue {
+        color: #E8E8E8;
+    }
+}

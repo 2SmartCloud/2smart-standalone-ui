@@ -1,0 +1,45 @@
+@import "../../../assets/styles/colors.less";
+@import "../../../assets/styles/media.less";
+
+.Icon {
+    cursor: pointer;
+
+    path {
+        fill: var(--color_icon);
+        transition: fill 0.3s ease;
+    }
+
+    @media @hover__not-touch {
+        &:hover {
+            path {
+                fill: var(--color_icon--hover);
+            }
+        }
+    }
+
+    &.sendMessage {
+        width: 20px;
+        height: 20px;
+
+        path {
+            fill: none !important;
+            stroke: var(--color_icon);
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 2px;
+            transition: stroke 0.3s ease;
+        }
+
+        &:hover {
+            path {
+                stroke: var(--color_icon--hover);
+            }
+        }
+    }
+
+    &.logout {
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+}

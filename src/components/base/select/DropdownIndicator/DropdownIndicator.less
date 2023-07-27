@@ -1,0 +1,25 @@
+.DropdownIndicator {
+    path {
+        transition: fill 0.3s;
+        fill: #BEBEBE;
+    }
+
+    &:hover {
+        path {
+            fill: #979797;
+        }
+    }
+}
+
+.DropdownIndicator.dark {
+    path {
+        transition: fill 0.3s;
+        fill: var(--color_icon);
+    }
+
+    &:hover {
+        path {
+            fill: var(--color_icon--hover);
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<svg width="29" height="25" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="27" width="31" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line id="svg_1" fill="none" stroke="#04c0b2" stroke-miterlimit="10" y2="3.5178" y1="3.5178" x2="27.544167" x1="9.651167"/>
+  <line id="svg_2" fill="none" stroke="#04c0b2" stroke-miterlimit="10" y2="12.3098" y1="12.3098" x2="27.713167" x1="9.820167"/>
+  <line id="svg_3" fill="none" stroke="#04c0b2" stroke-miterlimit="10" y2="21.3098" y1="21.3098" x2="27.627167" x1="9.905167"/>
+  <line id="svg_4" fill="none" stroke="#04c0b2" stroke-miterlimit="10" y2="5.9718" y1="5.9718" x2="1.706167" x1="6.609167"/>
+  <rect id="svg_5" fill="none" stroke="#04c0b2" stroke-miterlimit="10" y="1.0648" x="1.654167" width="4.955" height="4.907"/>
+  <rect id="svg_6" fill="none" stroke="#04c0b2" stroke-miterlimit="10" y="9.8558" x="1.654167" width="4.955" height="4.907"/>
+  <rect id="svg_7" fill="none" stroke="#04c0b2" stroke-miterlimit="10" y="18.8568" x="1.681167" width="4.955" height="4.906"/>
+ </g>
+</svg>

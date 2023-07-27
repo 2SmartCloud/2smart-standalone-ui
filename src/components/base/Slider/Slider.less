@@ -1,0 +1,56 @@
+.Slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96%;
+    height: 100%;
+    flex-direction: column;
+    color: var(--primary_text_color);
+
+    .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .minValueWrapper,
+    .maxValueWrapper {
+        display: flex;
+        align-items: center;
+        width: calc(50% - 5px);
+        font-size: 16px;
+    }
+
+    .minValueWrapper {
+        justify-content: flex-start;
+    }
+
+    .maxValueWrapper {
+        justify-content: flex-end;
+    }
+
+    .valueLabel {
+        max-width: 200px;
+
+        & span {
+            color: var(--primary_text_color);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    .disabled {
+        &:hover {
+            cursor: -webkit-grab;
+        }
+
+        .valueLabel {
+            & span {
+                transition: background-color 0.5s;
+                background-color: #BDBDBD;
+            }
+        }
+    }
+}

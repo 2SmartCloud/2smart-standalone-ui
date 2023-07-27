@@ -1,0 +1,74 @@
+.deviceName {
+    font-size: 17px;
+    line-height: 18px;
+    color: var(--primary_text_color);
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.title {
+    font-size: 13px;
+    margin-top: 7px;
+    line-height: 18px;
+    color: var(--primary_text_color);
+    font-weight: 400;
+    word-break: break-word;
+}
+
+.message {
+    margin-top: 14px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 18px;
+    word-break: break-word;
+    color: var(--contrast_text_color);
+}
+
+.control {
+    padding: 4px;
+    border: 1px solid #04BAAC;
+    border-radius: 4px;
+    align-self: flex-end;
+    background-color: transparent;
+    cursor: pointer;
+    color: #04BAAC;
+
+    .reloadIcon {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-image: url('../../../assets/icons/reload.svg');
+    }
+
+    &:hover {
+        background-color: #04BAAC;
+        color: #FFF;
+
+        .reloadIcon {
+            -webkit-filter: grayscale(100%) brightness(5);
+            filter: grayscale(100%) brightness(5);
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &.cancell {
+        border: 1px solid transparent;
+    }
+}
+
+.controlsWrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    > * {
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

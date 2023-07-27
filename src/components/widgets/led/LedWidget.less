@@ -1,0 +1,28 @@
+.outerRing {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    transition: all 0.3s;
+    background: transparent;
+}
+
+.innerRing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 38px;
+    height: 38px;
+    line-height: 40px;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(136.91deg, #DFDEDE 19.76%, #AFAFAF 82.33%);
+}
+
+.ledValue {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}

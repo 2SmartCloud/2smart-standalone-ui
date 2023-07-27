@@ -1,0 +1,24 @@
+@import "../../../../assets/styles/media.less";
+
+.scenarioTitle {
+    @media (max-width: @max-width__mobile) {
+        width: auto !important;
+        max-width: calc(100% - 25px) !important;
+        margin-right: 5px !important;
+    }
+}
+
+.scenarioContent {
+    align-items: center;
+    @media (max-width: @max-width__mobile) {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+.simpleScenarioIcon {
+    width: 80%;
+    height: 80%;
+    max-width: 40px;
+    max-height: 40px;
+}

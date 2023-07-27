@@ -1,0 +1,86 @@
+@import "../../../../../assets/styles/media.less";
+@import "../../../../../assets/styles/colors.less";
+
+@height__header: 61px;
+@height__footer: 89px;
+
+.Modal {
+    max-height: 510px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    max-width: 600px;
+    background: var(--primary_background_color);
+    position: relative;
+    user-select: none;
+    box-sizing: border-box;
+
+    .header {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: @height__header;
+        border-bottom: solid 1px var(--primary_border_color);
+        font-size: 20px;
+        font-weight: 500;
+        word-break: break-all;
+        color: var(--primary_text_color);
+        user-select: none;
+
+        .title {
+            width: 100%;
+            text-align: center;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+            white-space: nowrap;
+        }
+    }
+
+    .closeButton {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 0;
+        color: var(--color_icon);
+    }
+}
+
+@media (max-height: @max-height__500) {
+    .Modal {
+        min-height: 400px;
+    }
+}
+
+@media (max-height: @max-height__400) {
+    .Modal {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 350px) {
+    .Modal {
+        .header {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .Modal {
+        .closeButton {
+            &:hover {
+                background-color: transparent;
+                color: var(--color_icon--hover);
+                cursor: pointer;
+            }
+        }
+    }
+}
