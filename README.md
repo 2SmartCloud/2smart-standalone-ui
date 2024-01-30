@@ -1,7 +1,7 @@
 # 2smart-ui
 
 ## Run project locally
-1. npm i
+1. npm ci
 2. npm run config:dev
 3. npm run start
 
