@@ -1,4 +1,4 @@
-image: $DOCKER_REGISTRY_PREFIX/2smart/utils/combined-ci-image:25-dind
+image: $DOCKER_REGISTRY_PREFIX/2smart/utils/combined-ci-image:buildx
 
 stages:
   - test
@@ -6,7 +6,7 @@ stages:
   - buildx
 
 services:
-  - name: $DOCKER_REGISTRY_PREFIX/2smart/base-images/docker-dind:25-dind
+  - name: $DOCKER_REGISTRY_PREFIX/2smart/base-images/docker-dind
     alias: docker
 
 before_script:
@@ -16,6 +16,7 @@ before_script:
 lint:
   stage: test
   script:
+    - sleep 100000
     - npm ci
     - npm run lint
   only:
