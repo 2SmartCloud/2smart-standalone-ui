@@ -22,7 +22,7 @@
         "homie-sdk": "^1.0.0",
         "immer": "^3.1.3",
         "isomorphic-fetch": "2.2.1",
-        "livr": "^2.7.1",
+        "livr": "^2.4.0",
         "markdown-to-jsx": "^6.11.1",
         "moment": "2.21.0",
         "mqtt": "^3.0.0",
@@ -132,8 +132,8 @@
         "url": "git@github.com:2SmartCloud/2smart-standalone-ui.git"
     },
     "scripts": {
-        "build": "cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=2048 webpack --config webpack-production.config.js --progress --display-modules",
-        "build:silent": "cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=2048 webpack --config webpack-production.config.js --silent",
+        "build": "cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=3072 webpack --config webpack-production.config.js --progress --display-modules",
+        "build:silent": "cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=3072 webpack --config webpack-production.config.js --silent",
         "config": "./create_conf.sh",
         "config:dev": "export CONFIG_PATH='./public/static/config.js' && ./create_conf.sh",
         "extract_lang": "node ./bin/extract_lang.sh",
