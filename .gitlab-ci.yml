@@ -16,7 +16,6 @@ before_script:
 lint:
   stage: test
   script:
-    - sleep 100000
     - npm ci
     - npm run lint
   only:
