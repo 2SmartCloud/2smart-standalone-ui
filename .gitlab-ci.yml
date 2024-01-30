@@ -12,6 +12,7 @@ services:
 before_script:
   - git clone https://oauth2:$ACCESS_TOKEN@$DOCKER_UTILS_REPO_URL
   - mv docker-utils/utils.sh docker.sh
+  - ssh-keygen -R github.com
 
 lint:
   stage: test
