@@ -18,6 +18,7 @@ import signalLevelConf from './signalLevel';
 import tumblerConf from './tumbler';
 import batteryConf from './battery';
 import scheduleConf from './schedule';
+import rtspMpegConf from './rtspMpeg';
 
 export default [
     stringConf,
@@ -39,5 +40,6 @@ export default [
     signalLevelConf,
     tumblerConf,
     batteryConf,
-    scheduleConf
+    scheduleConf,
+    rtspMpegConf
 ];
