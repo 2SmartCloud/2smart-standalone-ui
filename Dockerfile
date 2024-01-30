@@ -16,7 +16,7 @@ COPY webpack-production.config.js .
 # solution for core-js postinstall script hang up
 # https://github.com/zloirock/core-js/issues/673#issuecomment-550199917
 RUN npm config set unsafe-perm true
-RUN npm i
+RUN npm ci
 RUN npm run build:silent
 
 FROM node:12.5-alpine

@@ -1,4 +1,4 @@
-image: $DOCKER_REGISTRY_PREFIX/2smart/utils/combined-ci-image:buildx
+image: $DOCKER_REGISTRY_PREFIX/2smart/utils/combined-ci-image:25-dind
 
 stages:
   - test
@@ -6,13 +6,12 @@ stages:
   - buildx
 
 services:
-  - name: $DOCKER_REGISTRY_PREFIX/2smart/base-images/docker-dind
+  - name: $DOCKER_REGISTRY_PREFIX/2smart/base-images/docker-dind:25-dind
     alias: docker
 
 before_script:
   - git clone https://oauth2:$ACCESS_TOKEN@$DOCKER_UTILS_REPO_URL
   - mv docker-utils/utils.sh docker.sh
-  - ssh-keygen -R github.com
 
 lint:
   stage: test
